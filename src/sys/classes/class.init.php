@@ -36,6 +36,7 @@ class ALLNIME_Init {
 		$this->load_input();
 		$this->clean_input();
 		if (!$this->load_config()) {
+			$this->throwError("500 - Internal Error", "Failed to load config!");
 		}
 		if(!$this->connect_database()) {
 			$this->throwError("500 - Internal Error", "Database connection error!");
