@@ -9,13 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Início</a>
+          <a class="nav-link active" aria-current="page" href="./">Início</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Animes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">Mangas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./about.php">About us</a>
         </li>
       </ul>
     </div>
