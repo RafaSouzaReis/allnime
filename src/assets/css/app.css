@@ -1,0 +1,8 @@
+.navbar-brand {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.dark {
+  background-color: #141414;
+}

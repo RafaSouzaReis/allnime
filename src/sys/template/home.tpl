@@ -1,3 +1,1 @@
-<div class="container">
-
-</div>
+<?php $this->includes('navbar'); ?>
