@@ -1,1 +1,1 @@
-<h5><?php echo lang("hot"); ?>Em alta</h5>
+<h5>Em alta</h5>
