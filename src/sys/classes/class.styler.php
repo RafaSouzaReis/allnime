@@ -14,7 +14,7 @@ class ALLNIME_Styler {
   public function initPage() {
 		global $ALLNIME_Sys;
 		global $ALLNIME_Styler;
-    include(ROOT . '/template/header.tpl');
+    include(ROOT . '/template/base/header.php');
   }
 
   public function assign($var, $var2) {
@@ -28,8 +28,8 @@ class ALLNIME_Styler {
   public function output() {
 		global $ALLNIME_Sys;
 		global $ALLNIME_Styler;
-    include(ROOT . '/template/' . $this->Template . '.tpl');
-    include(ROOT . '/template/footer.tpl');
+    include(ROOT . '/template/' . $this->Template . '.php');
+    include(ROOT . '/template/base/footer.php');
   }
 
 	public function getAssign($var) {
@@ -43,7 +43,7 @@ class ALLNIME_Styler {
 	public function includes($var) {
 		global $ALLNIME_Sys;
 		global $ALLNIME_Styler;
-		include(ROOT . '/template/includes/' . $var . '.tpl');
+		include(ROOT . '/template/includes/' . $var . '.php');
 	}
 
 	public function get_path() {
@@ -51,7 +51,7 @@ class ALLNIME_Styler {
 	}
 }
 
-function get_lang($var) {
+function lang($var) {
 	global $ALLNIME_Sys;
 	return $ALLNIME_Sys->get_lang($var);
 }

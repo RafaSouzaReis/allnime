@@ -95,7 +95,7 @@ class ALLNIME_Init {
 
 	public function get_lang($var) {
 		global $_LANG;
-		return isset($_LANG[$var]) ? $_LANG[$var] : "Missing Language Var " . $var;
+		return isset($_LANG[$var]) ? $_LANG[$var] : "Missing Language Var: " . $var;
 	}
 
 	public function validate_language($lang = '') {
@@ -148,7 +148,11 @@ class ALLNIME_Init {
         }
 			return;
 		}
-		$Accept_Lang = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+			$Accept_Lang = "en";
+		} else {
+			$Accept_Lang = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+		}
 		$lang = $this->validate_language($Accept_Lang);
 		$file = ROOT . "/lang/" . $lang . ".php";
 		if (file_exists($file)) {
