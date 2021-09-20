@@ -5,6 +5,7 @@ include_once ROOT . "/database/dbfunctions.php";
 
 class ALLNIME_Init {
 	private $input = array();
+	private $headers = array();
 	private $config = array();
 	private $clean_variables = array("int" => array(0 => "id", 1 => "userid", 2 => "kbcid", 3 => "invoiceid", 4 => "idkb", 5 => "currency"), "a-z" => array(0 => "systpl", 1 => "carttpl", 2 => "language"));
 	private $db_host = "";
@@ -21,6 +22,7 @@ class ALLNIME_Init {
 	}
 
 	public function init() {
+		$this->headers = getallheaders();
 		$this->load_classes();
 		$_GET = $this->sanitize_input_vars($_GET);
 		$_POST = $this->sanitize_input_vars($_POST);
@@ -148,8 +150,8 @@ class ALLNIME_Init {
         }
 			return;
 		}
-		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-			$Accept_Lang = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+		if (isset($this->headers['Accept-Language'])) {
+			$Accept_Lang = explode(",", $this->headers['Accept-Language'])[0];
 		} else {
 			$Accept_Lang = "en";
 		}

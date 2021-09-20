@@ -1,2 +1,0 @@
-# allnime
-website anime

@@ -1,0 +1,1 @@
+<h5><?php echo lang("trending"); ?></h5>

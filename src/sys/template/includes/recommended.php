@@ -1,1 +1,1 @@
-<h5>Recomendados</h5>
+<h5><?php echo lang("recommended"); ?></h5>
