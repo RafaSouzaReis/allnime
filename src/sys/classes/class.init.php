@@ -149,9 +149,9 @@ class ALLNIME_Init {
 			return;
 		}
 		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-			$Accept_Lang = "en";
-		} else {
 			$Accept_Lang = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+		} else {
+			$Accept_Lang = "en";
 		}
 		$lang = $this->validate_language($Accept_Lang);
 		$file = ROOT . "/lang/" . $lang . ".php";
