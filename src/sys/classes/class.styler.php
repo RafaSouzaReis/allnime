@@ -41,7 +41,11 @@ class Styler {
 	}
 
 	public function includes($include) {
-		include(ROOT . '/views/includes/' . $include . '.php');
+		if(file_exists(ROOT . '/views/includes/' . $include . '.php')) {
+			include(ROOT . '/views/includes/' . $include . '.php');
+		} else {
+			echo '<h5 style="color: red;">Internal Error: failed to get include ' . $include. '</h5>';
+		}
 	}
 
 	public function getTemplatePath() {
