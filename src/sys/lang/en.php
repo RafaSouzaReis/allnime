@@ -1,5 +1,5 @@
 <?php
-if (!defined("ALLNIME_Init")) die("Access Denied");
+if (!defined("APPInit")) die("Access Denied");
 $_LANG['iso'] = "en";
 $_LANG['trending'] = "Trending";
 $_LANG['recent'] = "Recents";

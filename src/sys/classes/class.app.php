@@ -1,48 +1,49 @@
 <?php
-define("ALLNIME_Init", true);
+define("APPInit", true);
 define("ROOT", realpath(dirname(__FILE__) . "/../"));
-class ALLNIME_Init {
+class App {
 	private $input = array();
 	private $headers = array();
 	private $config = array();
 	private $clean_variables = array("int" => array(0 => "id", 1 => "userid", 2 => "kbcid", 3 => "invoiceid", 4 => "idkb", 5 => "currency"), "a-z" => array(0 => "systpl", 1 => "carttpl", 2 => "language"));
-	private $db_host = "";
-	private $db_username = "";
-	private $db_password = "";
-	private $db_name = "";
-	private $db_sqlcharset = "";
+	private $db_host = '';
+	private $db_username = '';
+	private $db_password = '';
+	private $db_name = '';
+	private $db_sqlcharset = '';
+	private $base_url = '';
 	public $remote_ip = '';
 	private $config_vars = array(0 => 'instaceid');
 	private $language = '';
 	private $danger_vars = array(0 => "_GET", 1 => "_POST", 2 => "_REQUEST", 3 => "_SERVER", 4 => "_COOKIE", 5 => "_FILES", 6 => "_ENV", 7 => "GLOBALS");
+	private $styler;
 
 	public function __construct() {
-	}
-
-	public function init() {
 		$this->headers = getallheaders();
-		$this->load_classes();
-		$_GET = $this->sanitize_input_vars($_GET);
-		$_POST = $this->sanitize_input_vars($_POST);
-		$_REQUEST = $this->sanitize_input_vars($_REQUEST);
-		$_SERVER = $this->sanitize_input_vars($_SERVER);
-		$_COOKIE = $this->sanitize_input_vars($_COOKIE);
+		$this->loadClasses();
+		$_GET = $this->sanitizeInputVars($_GET);
+		$_POST = $this->sanitizeInputVars($_POST);
+		$_REQUEST = $this->sanitizeInputVars($_REQUEST);
+		$_SERVER = $this->sanitizeInputVars($_SERVER);
+		$_COOKIE = $this->sanitizeInputVars($_COOKIE);
 		foreach ($this->danger_vars as $var) {
 			if (isset($_REQUEST[$var]) || isset($_FILES[$var])) {
 				exit("Access denied!");
 				continue;
 			}
 		}
-		$this->load_input();
-		$this->clean_input();
-		if (!$this->load_config()) {
+		$this->loadInput();
+		$this->cleanInput();
+		if (!$this->loadConfig()) {
 			$this->throwError("500 - Internal Error", "Failed to load config!");
 		}
-		if(!$this->connect_database()) {
+		if(!$this->connectDatabase()) {
 			$this->throwError("500 - Internal Error", "Database connection error!");
 		}
-		$this->load_language();
-    return $this;
+		$this->loadLanguage();
+		$this->styler = new Styler();
+		global $APP;
+		$APP = $this;
 	}
 
 	public function throwError($title, $message) {
@@ -50,58 +51,85 @@ class ALLNIME_Init {
 	}
 
   public function getStyler() {
-    return new ALLNIME_Styler();
+    return $this->styler;
   }
 
-	public function getNavbarMG() {
-		return new ALLNIME_Navbar();
+	public function processRequest() {
+		$url = $this->parseUrl();
+		if (!isset($url)) $this->throwError("Failed to parse url.", "Url is invalid.");empty($url[0]);
+		if (empty($url[0])) {
+			$controller = $this->loadController('home');
+			if ($controller == null) $this->throwError("404 Not Found", "Path not found.");
+		} else {
+			if (empty($url[0])) $this->throwError("404 Not Found", "Path not found.");
+			$controller = $this->loadController($url[0]);
+			if ($controller == null) $this->throwError("404 Not Found", "Path not found.");
+		}
+		$controller->process();
 	}
 
-  private function load_classes() {
-    if(!$this->load_class('styler')) $this->throwError("500 - Internal Error", "Error loading ALLNIMES_Styler class, invalid or nonexistent file!");
-		//if(!$this->load_class('navbar')) $this->throwError("500 - Internal Error", "Error loading ALLNIMES_Navbar class, invalid or nonexistent file!");
+	private function parseUrl() {
+		$url = filter_input(INPUT_SERVER, 'REQUEST_URI');
+		$url = str_replace($this->base_url, '', $url);
+    return explode('/', $url);
   }
 
-  private function load_class($class) {
-    $class_path = ROOT . "/classes/class." . $class . ".php";
-    if(file_exists($class_path)) {
-      include_once $class_path;
+  private function loadClasses() {
+    if(!$this->loadClass('styler')) $this->throwError("500 - Internal Error", "Error loading Styler class, invalid or nonexistent file!");
+  }
+
+  private function loadController($controller) {
+		$controllerPath = ROOT . "/controllers/controller." . $controller . ".php";
+    if(file_exists($controllerPath)) {
+      include_once($controllerPath);
+			if(!class_exists('Controller')) $this->throwError("500 Failed to load", "Failed to load controller, class Controller not found.");
+			return new Controller($this, $this->getStyler());
+    } else {
+      return null;
+    }
+	}
+
+  private function loadClass($class) {
+    $classPath = ROOT . "/classes/class." . $class . ".php";
+    if(file_exists($classPath)) {
+      include_once($classPath);
       return true;
     } else {
       return false;
     }
   }
 
-	private function connect_database() {
+	private function connectDatabase() {
 	  global $pdo_mysql;
 	  $pdo_mysql = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_username, $this->db_password);
 	  return true;
   }
 
-	private function load_config() {
-		$config_path = ROOT . "/config.php";
-		if(file_exists($config_path)) {
-			require $config_path;
-		    $this->db_host = $db_host;
-	    	$this->db_username = $db_username;
-	    	$this->db_password = $db_password;
-	    	$this->db_name = $db_name;
+	private function loadConfig() {
+		$configPath = ROOT . "/config.php";
+		if(file_exists($configPath)) {
+			require($configPath);
+		  $this->db_host = $db_host;
+	   	$this->db_username = $db_username;
+	   	$this->db_password = $db_password;
+	   	$this->db_name = $db_name;
 			$this->db_sqlcharset = $db_sqlcharset;
+			$this->base_url = $base_url;
 			return true;
 		} else {
 		  return false;
 		}
 	}
 
-	public function get_lang($var) {
+	public function getLang($var) {
 		global $_LANG;
 		return isset($_LANG[$var]) ? $_LANG[$var] : "Missing Language Var: " . $var;
 	}
 
-	public function validate_language($lang = '') {
+	public function validateLanguage($lang = '') {
 		$lang = strtolower($lang);
 		$lang = $this->sanitize("a-z", $lang);
-		$languages = $this->get_languages();
+		$languages = $this->getLanguages();
 		if (!in_array($lang, $languages)) {
 			if (in_array("pt-br", $languages)) {
 				$lang = "pt-br";
@@ -115,7 +143,7 @@ class ALLNIME_Init {
 		return $lang;
 	}
 
-	public function get_languages() {
+	public function getLanguages() {
 		$langs = array();
 		$dirpath = ROOT . "/lang/";
 		if (!is_dir($dirpath)) {
@@ -135,11 +163,11 @@ class ALLNIME_Init {
 		return  $langs;
 	}
 
-	public function load_language()  {
+	public function loadLanguage()  {
 		global $_LANG;
 		$_LANG = array();
 		if(isset($_SESSION['language'])) {
-			$lang = $this->validate_language($_SESSION['language']);
+			$lang = $this->validateLanguage($_SESSION['language']);
 			$file = ROOT . "/lang/" . $lang . ".php";
 		    if (file_exists($file)) {
 			    include $file;
@@ -153,7 +181,7 @@ class ALLNIME_Init {
 		} else {
 			$Accept_Lang = "en";
 		}
-		$lang = $this->validate_language($Accept_Lang);
+		$lang = $this->validateLanguage($Accept_Lang);
 		$file = ROOT . "/lang/" . $lang . ".php";
 		if (file_exists($file)) {
 			    $_SESSION['language'] = $lang;
@@ -179,14 +207,14 @@ class ALLNIME_Init {
 		return $var;
 	}
 
-	public function get_var($k, $k2 = "") {
+	public function getVar($k, $k2 = "") {
 		if ($k2) {
 			return isset($this->input[$k][$k2]) ? $this->input[$k][$k2] : "";
 		}
 		return isset($this->input[$k]) ? $this->input[$k] : "";
 	}
 
-	private function load_input() {
+	private function loadInput() {
 		if (isset($_COOKIE)) {
 			foreach ($_COOKIE as $k => $v) {
 				unset($_REQUEST[$k]);
@@ -197,7 +225,7 @@ class ALLNIME_Init {
 		}
 	}
 
-	private function clean_input() {
+	private function cleanInput() {
 		foreach ($this->clean_variables as $type => $vars) {
 			foreach ($vars as $var) {
 				if (isset($this->input[$var])) {
@@ -208,7 +236,7 @@ class ALLNIME_Init {
 		}
 	}
 
-	public function sanitize_input_vars($arr) {
+	public function sanitizeInputVars($arr) {
 		$cleandata = array();
 		if (is_array($arr)) {
 			if (isset($arr['sqltype'])) {
@@ -217,7 +245,7 @@ class ALLNIME_Init {
 			foreach ($arr as $key => $val) {
 				if (ctype_alnum(str_replace(array("_", "-", ".", " "), "", $key))) {
 					if (is_array($val)) {
-						$cleandata[$key] = $this->sanitize_input_vars($val);
+						$cleandata[$key] = $this->sanitizeInputVars($val);
 						return;
 					}
 					$val = str_replace(chr(0), "", $val);

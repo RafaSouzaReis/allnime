@@ -1,5 +1,5 @@
 <?php
-class ALLNIME_Styler {
+class Styler {
 	private $Template;
 	private $Lang;
 	private $Vars = array("title"=>"");
@@ -7,56 +7,50 @@ class ALLNIME_Styler {
 	public function __construct() {
 	}
 
-  public function setTitle($var) {
-		$this->assign("title", $var);
+  public function setTitle($title) {
+		$this->assign("title", $title);
   }
 
-  public function initPage() {
-		global $ALLNIME_Sys;
-		global $ALLNIME_Styler;
-    include(ROOT . '/template/base/header.php');
+  public function init() {
+    include(ROOT . '/views/base/header.php');
   }
 
-  public function assign($var, $var2) {
-    $this->Vars[$var] = $var2;
+  public function assign($key, $value) {
+    $this->Vars[$key] = $value;
   }
 
 	public function getTemplate() {
 		return $this->Template;
 	}
 
-  public function setTemplate($var) {
-    $this->Template = $var;
+  public function setTemplate($template) {
+    $this->Template = $template;
   }
 
-  public function output() {
-		global $ALLNIME_Sys;
-		global $ALLNIME_Styler;
-    include(ROOT . '/template/' . $this->Template . '.php');
-    include(ROOT . '/template/base/footer.php');
+  public function render() {
+    include(ROOT . '/views/' . $this->Template . '.php');
+    include(ROOT . '/views/base/footer.php');
   }
 
-	public function getAssign($var) {
-		return isset($this->Vars[$var]) ? $this->Vars[$var] : "Missing Assigned Var: " . $var;
+	public function getAssign($key) {
+		return isset($this->Vars[$key]) ? $this->Vars[$key] : "Missing Assigned Var: " . $key;
 	}
 
-	public function existAssign($var) {
-		return isset($this->Vars[$var]);
+	public function existAssign($key) {
+		return isset($this->Vars[$key]);
 	}
 
-	public function includes($var) {
-		global $ALLNIME_Sys;
-		global $ALLNIME_Styler;
-		include(ROOT . '/template/includes/' . $var . '.php');
+	public function includes($include) {
+		include(ROOT . '/views/includes/' . $include . '.php');
 	}
 
-	public function get_path() {
-		return '/template/' . $this->Template;
+	public function getTemplatePath() {
+		return '/views/' . $this->Template;
 	}
 }
 
 function lang($var) {
-	global $ALLNIME_Sys;
-	return $ALLNIME_Sys->get_lang($var);
+	global $APP;
+	return $APP->getLang($var);
 }
 ?>

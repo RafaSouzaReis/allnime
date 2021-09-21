@@ -4,4 +4,5 @@ $db_username = 'root';
 $db_password = 'root';
 $db_name = 'allnimes';
 $db_sqlcharset = 'utf-8';
+$base_url = '/allnime/src/';
 ?>
