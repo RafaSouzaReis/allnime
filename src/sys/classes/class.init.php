@@ -1,8 +1,6 @@
 <?php
 define("ALLNIME_Init", true);
 define("ROOT", realpath(dirname(__FILE__) . "/../"));
-include_once ROOT . "/database/dbfunctions.php";
-
 class ALLNIME_Init {
 	private $input = array();
 	private $headers = array();
