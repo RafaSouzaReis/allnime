@@ -21,6 +21,10 @@ class ALLNIME_Styler {
     $this->Vars[$var] = $var2;
   }
 
+	public function getTemplate() {
+		return $this->Template;
+	}
+
   public function setTemplate($var) {
     $this->Template = $var;
   }

@@ -6,9 +6,9 @@ if (!class_exists("ALLNIME_Init")) {
 }
 global $ALLNIME_Sys;
 global $ALLNIME_Styler;
-$ALLNIME_Styler->setTitle('Allnimes - About');
+$ALLNIME_Styler->setTitle('Allnimes - Mangas');
 $ALLNIME_Styler->initPage();
-$ALLNIME_Styler->setTemplate('about');
+$ALLNIME_Styler->setTemplate('mangas');
 $ALLNIME_Styler->output();
 
 ?>
