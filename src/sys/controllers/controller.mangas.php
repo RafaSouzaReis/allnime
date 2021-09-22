@@ -10,7 +10,7 @@ class Controller {
   }
 
   public function process() {
-    $this->styler->setTitle('Allnimes - Mangas');
+    $this->styler->setTitle('AllNimes - Mangas');
     $this->styler->init();
     $this->styler->setTemplate('mangas');
     $this->styler->render();

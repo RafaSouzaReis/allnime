@@ -10,9 +10,9 @@ class Controller {
   }
 
   public function process() {
-    $this->styler->setTitle('AllNimes - Animes');
+    $this->styler->setTitle('AllNimes - Login');
     $this->styler->init();
-    $this->styler->setTemplate('animes');
+    $this->styler->setTemplate('login');
     $this->styler->render();
   }
 }
