@@ -4,6 +4,7 @@ $_LANG['iso'] = "pt-br";
 $_LANG['trending'] = "Em alta";
 $_LANG['recent'] = "Novidades";
 $_LANG['recommended'] = "Recomendados";
+$_LANG['list'] = "Lista";
 $_LANG['home'] = "Início";
 $_LANG['animes'] = "Animes";
 $_LANG['mangas'] = "Mangás";
