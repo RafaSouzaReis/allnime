@@ -1,6 +1,8 @@
-<div class="anime-buttons">
-  <buttons class="anime-button" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i></butons>
-</div>
+<header>
+  <div class="anime-buttons">
+    <buttons class="anime-button" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i></butons>
+  </div>
+</header>
 <div class="container d-table h-100 login-container">
   <div class="d-table-cell align-middle">
     <div class="row">

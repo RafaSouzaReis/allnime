@@ -1,6 +1,8 @@
-<div class="anime-buttons">
-  <buttons class="anime-button" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i></butons>
-</div>
+<header>
+  <div class="anime-buttons">
+    <buttons class="anime-button" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i></butons>
+  </div>
+</header>
 <div class="container d-table h-100 login-container">
   <div class="d-table-cell align-middle">
     <div class="row">
@@ -19,7 +21,7 @@
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
-            <h5 class="card-title">Forgot Password</h5>
+            <h3 class="card-title" style="margin-bottom: 20px;">Forgot Password</h3>
             <form data-form-type="register" action="./register" method="post">
               <div class="mb-3">
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
