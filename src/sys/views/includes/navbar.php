@@ -27,7 +27,7 @@
         </li>
       </ul>
       <ul class="navbar-nav mr-auto">
-        <a class="btn btn-green" href="./login">Login</a>
+        <a class="btn btn-green" href="./login"><i class="fas fa-user"></i> Login</a>
       </ul>
     </div>
   </div>
