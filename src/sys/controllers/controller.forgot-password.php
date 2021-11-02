@@ -10,9 +10,9 @@ class Controller {
   }
 
   public function process() {
-    $this->styler->setTitle('AllNimes - Description');
+    $this->styler->setTitle('AllNimes - Forgot Password');
     $this->styler->init();
-    $this->styler->setTemplate('description');
+    $this->styler->setTemplate('forgot-pwd');
     $this->styler->render();
   }
 }
