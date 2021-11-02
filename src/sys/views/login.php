@@ -16,12 +16,14 @@
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
-            <h5 class="card-title">Login</h5>
+            <h3 class="card-title" style="margin-bottom: 20px;">Login</h3>
+            <h5 class="card-title">Email</h5>
             <form data-form-type="login" action="./login" method="post">
               <div class="mb-3">
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
                   autoComplete="email" data-form-type="email" required />
               </div>
+              <h5 class="card-title">Senha</h5>
               <div class="mb-3">
                 <span class="btn-showpass">
                   <i class="fas fas-eye"></i>

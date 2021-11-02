@@ -16,25 +16,39 @@
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
-            <h5 class="card-title">Register</h5>
+            <h5 class="card-title">Email</h5>
             <form data-form-type="register" action="./register" method="post">
               <div class="mb-3">
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
                   autoComplete="email" data-form-type="email" required />
               </div>
+              <h5 class="card-title">Confirme o Email</h5>
               <div class="mb-3">
-                <span class="btn-showpass">
+                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
+                  autoComplete="email" data-form-type="email" required />
+              </div>
+              <h5 class="card-title"><?php echo lang("password"); ?></h5>
+              <div class="mb-3">
+                <!--<span class="btn-showpass">
                   <i class="fas fas-eye"></i>
-                </span>
+                </span>-->
+                <input class="form-control" placeholder="Password" type="password" value={this.state.password}
+                  autoComplete="current-password" data-form-type="password" required />
+              </div>
+              <h5 class="card-title">Confirme a senha</h5>
+              <div class="mb-3">
+                <!--<span class="btn-showpass">
+                  <i class="fas fas-eye"></i>
+                </span>-->
                 <input class="form-control" placeholder="Password" type="password" value={this.state.password}
                   autoComplete="current-password" data-form-type="password" required />
               </div>
               <button class="btn btn-block btn-green my-1 w-100" type="submit">
-                Register
+                <?php echo lang("signin"); ?>
               </button>
             </form>
             <a href="./forgot-password" class="btn btn-block my-1 w-100 btn-lighter">
-              Forgot password
+              <?php echo lang("forgot_password"); ?>
             </a>
             <hr />
             <a href="./login" class="btn btn-darkgrey btn-block w-100">

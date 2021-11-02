@@ -9,4 +9,7 @@ $_LANG['home'] = "Home";
 $_LANG['animes'] = "Animes";
 $_LANG['mangas'] = "Mangas";
 $_LANG['about_us'] = "About Us";
+$_LANG['signin'] = "Sign In";
+$_LANG['password'] = 'Password';
+$_LANG['forgot_password'] = 'Forgot Password';
 ?>
