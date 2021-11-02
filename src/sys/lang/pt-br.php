@@ -5,6 +5,7 @@ $_LANG['trending'] = "Em alta";
 $_LANG['recent'] = "Novidades";
 $_LANG['recommended'] = "Recomendados";
 $_LANG['list'] = "Lista";
+$_LANG['my_list'] = "Minha Lista";
 $_LANG['home'] = "Início";
 $_LANG['animes'] = "Animes";
 $_LANG['mangas'] = "Mangás";

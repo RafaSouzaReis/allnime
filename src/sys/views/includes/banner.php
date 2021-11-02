@@ -2,8 +2,8 @@
   <div class="banner-contents">
     <h1 class="banner-title">ぼくのぴこ</h1>
     <div class="banner-buttons">
-      <buttons class="banner-button">Info</buttons>
-      <buttons class="banner-button">My List</butons>
+      <!--<buttons class="banner-button">Info</buttons>
+      <buttons class="banner-button">My List</butons>-->
     </div>
     <div class="banner-description">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sapiente?
