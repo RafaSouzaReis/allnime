@@ -1,4 +1,13 @@
 <?php $this->includes('navbar'); ?>
+<div class="container about-card">
+    <h1><center>Sobre</center></h1>
+    <p>Allnimes é uma comunidade criada por quatro estudantes de Ciência da Computação e um bicho preguiça,
+      onde você pode encontrar informações dos seus desenhos favoritos (animes são desenhos, aceite)
+      além de marcar o que você anda assistindo e já assistiu.<br>
+      Criado como o intuito de desenvolver um site para disciplina de <i>Desenvolvimento Web</i> da <a
+        class="link-green" href="https://portal.anhembi.br/"><strong>Universidade Anhembi Morumbi</strong></a>,
+      todo conteúdo é gratuito e acessível, onde a única limitação é o seu interesse.</p>
+  </div>
 <div class="container-fluid">
   <div class="d-flex flex-wrap justify-content-center">
     <div class="card m-2 bg-dark" style="width: 18rem;">
@@ -51,14 +60,5 @@
               class="fab fa-github"></i> Github</a></div>
       </div>
     </div>
-  </div>
-  <div class="container about-card">
-    <h1>Sobre</h1>
-    <p>Allnimes é uma comunidade criada por quatro estudantes de Ciência da Computação e um bicho preguiça,
-      onde você pode encontrar informações dos seus desenhos favoritos (animes são desenhos, aceite)
-      além de marcar o que você anda assistindo e já assistiu.<br>
-      Criado como o intuito de desenvolver um site para disciplina de <i>Desenvolvimento Web</i> da <a
-        class="link-green" href="https://portal.anhembi.br/"><strong>Universidade Anhembi Morumbi</strong></a>,
-      todo conteúdo é gratuito e acessível, onde a única limitação é o seu interesse.</p>
   </div>
 </div>

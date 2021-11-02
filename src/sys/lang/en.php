@@ -13,4 +13,5 @@ $_LANG['about_us'] = "About Us";
 $_LANG['signin'] = "Sign In";
 $_LANG['password'] = 'Password';
 $_LANG['forgot_password'] = 'Forgot Password';
+$_LANG['similar'] = 'Similar';
 ?>

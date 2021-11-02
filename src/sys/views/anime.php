@@ -1,8 +1,8 @@
 <?php $this->includes('navbar'); ?>
 <div class="anime-container anime-fadebottom">
-  <img class="anime-poster" src="https://media.kitsu.io/anime/poster_images/7099/large.jpg" alt="macDonald">
+  <img class="anime-poster" src="https://media.kitsu.io/anime/poster_images/3936/large.jpg" alt="macDonald">
   <div class="anime-contents">
-    <h1 class="anime-title">ぼくのぴこ</h1>
+    <h1 class="anime-title">Fullmetal Alchemist: Brotherhood</h1>
     <div class="anime-icons">
       <div><i class="fas fa-thumbs-up"></i></div>
       <div class="outline">16</div>
@@ -11,16 +11,18 @@
     </div>
     <div class="anime-tags"></div>
     <div class="anime-description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sapiente?
-      Culpa cumque aliquid suscipit libero! Maxime nesciunt animi ipsam,
-      cupiditate libero vitae blanditiis sit quos excepturi. Maxime beatae sunt rerum.
+      O anime segue a história dos irmãos Elric, que recorrem à alquimia – tão minuciosamente estudada pelo pais dos meninos – para tentar trazer sua mãe de volta à vida. 
+      Entretanto os irmãos acabam não cumprindo uma das leis fundamentais da alquimia, a tal da TROCA EQUIVALENTE.
     </div>
     <div class="anime-buttons">
       <buttons class="anime-button"><i class="far fa-clock"></i> Watch Later</butons>
     </div>
+    <div class="anime-buttons">
+      <buttons class="anime-button"><i class="far fa-check-circle"></i> Already Watched </butons>
+    </div>
   </div>
 </div>
 <div class="bg-black">
-  <?php $this->includes('recommended'); ?>
+  <?php $this->includes('similar'); ?>
   <?php $this->includes('recommended'); ?>
 </div>
