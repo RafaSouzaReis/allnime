@@ -1,3 +1,4 @@
+<?php $this->includes('navbar'); ?>
 <div class="container d-table h-100 login-container">
   <div class="d-table-cell align-middle">
     <div class="row">
