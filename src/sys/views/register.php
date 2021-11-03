@@ -26,7 +26,7 @@
             <form data-form-type="register" action="./register" method="post">
               <div class="mb-3">
                 <input class="form-control" placeholder="<?php echo lang("username"); ?>" type="username"
-                  autoComplete="current-username" data-form-type="username" required />
+                  autoComplete="current-username" data-form-type="username" pattern="[a-zA-Z0-9]+" required />
               </div>
               <div class="mb-3">
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail"
