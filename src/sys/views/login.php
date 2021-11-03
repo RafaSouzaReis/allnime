@@ -1,10 +1,8 @@
-<header>
-  <div class="anime-buttons">
-    <buttons class="anime-button" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i></butons>
-  </div>
-</header>
 <div class="container d-table h-100 login-container">
   <div class="d-table-cell align-middle">
+    <div>
+      <a class="btn text-white" href="./"><i class="fas fa-arrow-left fa-2x"></i></a>
+    </div>
     <div class="row">
       <div class="col-sm-12 col-md-7 col-lg-7">
         <div style="position: relative; height: 100%;">
@@ -29,8 +27,8 @@
                   autoComplete="email" data-form-type="email" required />
               </div>
               <div class="mb-3">
-                <input class="form-control" placeholder="<?php echo lang("password"); ?>" type="password" autoComplete="current-password"
-                  data-form-type="password" required />
+                <input class="form-control" placeholder="<?php echo lang("password"); ?>" type="password"
+                  autoComplete="current-password" data-form-type="password" required />
               </div>
               <button class="btn btn-block btn-green my-1 w-100" type="submit">
                 <?php echo lang("login"); ?>

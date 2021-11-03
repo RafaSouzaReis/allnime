@@ -1,7 +1,8 @@
 <div class="poster-row">
   <h2><?php echo lang("recommended"); ?></h2>
-  <div class="row-posters">
-  <button class="row-btn"><span><i class="fas fa-chevron-left"></i></span></button>
+  <div class="row-posters" id="recommended-list">
+    <button class="row-btn" onClick="turnLeft('recommended-list')"><span><i
+          class="fas fa-chevron-left"></i></span></button>
     <a class="row-poster" href="anime">
       <img src="https://media.kitsu.io/anime/poster_images/695/large.jpg" alt="macDonald">
     </a>
@@ -38,6 +39,7 @@
     <a class="row-poster" href="anime">
       <img src="https://media.kitsu.io/anime/poster_images/41024/large.jpg" alt="macDonald">
     </a>
-    <button class="row-btn row-btn-right"><span><i class="fas fa-chevron-right"></i></span></button>
+    <button class="row-btn row-btn-right" onClick="turnRight('recommended-list')"><span><i
+          class="fas fa-chevron-right"></i></span></button>
   </div>
 </div>
