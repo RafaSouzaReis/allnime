@@ -220,9 +220,11 @@ class App {
 				unset($_REQUEST[$k]);
 			}
 		}
-		foreach ($_REQUEST as $k => $v) {
-			$this->input[$k] = $v;
-		}
+		if (isset($_REQUEST)) {
+		  foreach ($_REQUEST as $k => $v) {
+			  $this->input[$k] = $v;
+		  }
+	  }
 	}
 
 	private function cleanInput() {
