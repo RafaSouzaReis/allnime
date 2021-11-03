@@ -14,26 +14,26 @@
                 <img src="assets/img/logo.svg" alt="Logo" height="50" loading="lazy" />
               </a>
             </div>
-            <h4>Gerencie e descubra os seus animes favoritos a poucos clicks de distância.</h4>
+            <h4><h4><?php echo lang("slogan"); ?></h4></h4>
           </div>
         </div>
       </div>
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
-            <h3 class="card-title" style="margin-bottom: 20px;">Forgot Password</h3>
+            <h3 class="card-title" style="margin-bottom: 20px;"><h4><?php echo lang("forgot_password"); ?></h4></h3>
             <form data-form-type="register" action="./register" method="post">
               <div class="mb-3">
-                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Email"
+                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail"
                   autoComplete="email" data-form-type="email" required />
               </div>
               <button class="btn btn-block btn-green my-1 w-100" type="submit">
-                Send Email
+                <?php echo lang("send_email"); ?>
               </button>
             </form>
             <hr>
             <a href="./login" class="btn btn-darkgrey btn-block w-100">
-              Login
+              <?php echo lang("login"); ?>
             </a>
           </div>
         </div>

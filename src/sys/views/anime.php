@@ -15,10 +15,10 @@
       Entretanto os irmãos acabam não cumprindo uma das leis fundamentais da alquimia, a tal da TROCA EQUIVALENTE.
     </div>
     <div class="anime-buttons">
-      <buttons class="anime-button"><i class="far fa-clock"></i> Watch Later</butons>
+      <buttons class="anime-button"><i class="far fa-clock"></i> <?php echo lang("watch_later"); ?></butons>
     </div>
     <div class="anime-buttons">
-      <buttons class="anime-button"><i class="far fa-check-circle"></i> Already Watched </butons>
+      <buttons class="anime-button"><i class="far fa-check-circle"></i> <?php echo lang("already_watched"); ?> </butons>
     </div>
   </div>
 </div>

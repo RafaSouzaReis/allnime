@@ -5,4 +5,5 @@
   <?php $this->includes('mylist'); ?>
   <?php $this->includes('recommended'); ?>
   <?php $this->includes('recent'); ?>
+  <?php $this->includes('watch_again'); ?>
 </div>
