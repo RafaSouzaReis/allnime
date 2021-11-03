@@ -56,12 +56,13 @@ class App {
 
 	public function processRequest() {
 		$url = $this->parseUrl();
-		if (!isset($url)) $this->throwError("Failed to parse url.", "Url is invalid.");empty($url[0]);
+		if (!isset($url)) $this->throwError("Failed to parse url.", "Url is invalid.");
 		if (empty($url[0])) {
 			$controller = $this->loadController('home');
 			if ($controller == null) $this->throwError("404 Not Found", "Path not found.");
 		} else {
 			if (empty($url[0])) $this->throwError("404 Not Found", "Path not found.");
+			if ($url[0] == "?i=1") $url[0] = 'home';
 			$controller = $this->loadController($url[0]);
 			if ($controller == null) $this->throwError("404 Not Found", "Path not found.");
 		}
