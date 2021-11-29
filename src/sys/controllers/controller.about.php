@@ -1,14 +1,7 @@
 <?php
 
-class Controller {
-  private $app;
-  private $styler;
-
-  public function __construct($app, $styler) {
-    $this->app = $app;
-    $this->styler = $styler;
-  }
-
+class Controller extends BaseController {
+  
   public function process() {
     $this->styler->setTitle('AllNimes - About');
     $this->styler->init();

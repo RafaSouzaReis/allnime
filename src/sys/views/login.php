@@ -31,8 +31,9 @@
                   autoComplete="email" data-form-type="email" required />
               </div>
               <div class="mb-3">
-                <input class="form-control" placeholder="<?php echo lang("password"); ?>" type="password"
-                  autoComplete="current-password" data-form-type="password" required />
+                <input class="form-control" type="password" name="password"
+                  placeholder="<?php echo lang("password"); ?>" autoComplete="current-password"
+                  data-form-type="password" required />
               </div>
               <button class="btn btn-block btn-green my-1 w-100" type="submit">
                 <?php echo lang("login"); ?>

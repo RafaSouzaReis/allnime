@@ -1,17 +1,12 @@
 <?php
 
-useModel('account');
-
-class Controller {
-  private $app;
-  private $styler;
-
-  public function __construct($app, $styler) {
-    $this->app = $app;
-    $this->styler = $styler;
-  }
-
+class Controller extends BaseController {
+  
   public function process() {
+    if (isset($_SESSION['logged'])) {
+      header('Location: ./');
+      exit();
+    }
     $this->login();
     $this->styler->setTitle('AllNimes - Login');
     $this->styler->init();
@@ -37,7 +32,29 @@ class Controller {
         $this->styler->assign('bubbleContent', 'Password must be between 8 and 64 characters long.');
         return;
       }
+      $account = Account::getByEmail($email);
+      if ($account == null) {
+        $this->styler->assign('showForm', true);
+        $this->styler->assign('showBubble', true);
+        $this->styler->assign('bubbleType', 'error');
+        $this->styler->assign('bubbleContent', 'There is no account with this email address.');
+        return;
+      }
+      if ($account->login($password)) {
+        $_SESSION['logged'] = true;
+        $_SESSION['accountId'] = $account->getId();
+        header('Location: ./');
+        exit();
+      } else {
+        $this->styler->assign('showForm', true);
+        $this->styler->assign('showBubble', true);
+        $this->styler->assign('bubbleType', 'error');
+        $this->styler->assign('bubbleContent', 'Wrong or invalid password.');
+        return;
+      }
     }
+    $this->styler->assign('showForm', true);
+    $this->styler->assign('showBubble', false);
   }
 }
 

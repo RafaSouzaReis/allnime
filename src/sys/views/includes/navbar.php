@@ -27,7 +27,24 @@
         </li>
       </ul>
       <ul class="navbar-nav mr-auto">
+        <?php if ($this->getAssign('logged')) { ?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <?php echo $this->getAssign('account')->getUsername(); ?>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end mr-auto" aria-labelledby="navbarDropdown" right>
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="./logout">Logout</a></li>
+          </ul>
+        </li>
+        <?php } else { ?>
         <a class="btn btn-green" href="./login"><i class="fas fa-user"></i> <?php echo lang("login"); ?></a>
+        <?php } ?>
       </ul>
     </div>
   </div>

@@ -44,6 +44,7 @@ class App {
 		$this->styler = new Styler();
 		global $APP;
 		$APP = $this;
+		session_start();
 	}
 
 	public function throwError($title, $message) {

@@ -1,10 +1,10 @@
 <?php
 
 class Account {
-  public $id = -1;
-  public $email = '';
-  public $password = '';
-  public $username = '';
+  private $id = -1;
+  private $email = '';
+  private $password = '';
+  private $username = '';
 
   public function __construct($id, $email, $password, $username) {
     $this->id = $id;
@@ -15,6 +15,38 @@ class Account {
  
   public function save() {
 
+  }
+
+  public function login($rawPassword) {
+    return password_verify($rawPassword, $this->password);
+  }
+
+  public function getId() {
+    return $this->id;
+  }
+
+  public function getEmail() {
+    return $this->email;
+  }
+
+  public function setEmail($email) {
+    $this->email = $email;
+  }
+
+  public function getPassword() {
+    return $this->password;
+  }
+
+  public function setPassword($password) {
+    $this->password = $password;
+  }
+
+  public function getUsername() {
+    return $this->username;
+  }
+
+  public function setUsername($username) {
+    $this->username = $username;
   }
 
   public static function new($email, $password, $username) {
@@ -31,7 +63,7 @@ class Account {
     $stmt->execute([$id]); 
     $result = $stmt->fetch(PDO::FETCH_NUM);
     if ($result) {
-      $account = Account::new($result[0], $result[1], $result[2], $result[3]);
+      $account = new Account($result[0], $result[1], $result[2], $result[3]);
       return $account;
     }
     return null;
