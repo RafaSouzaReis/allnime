@@ -77,6 +77,7 @@ class App {
 
   private function loadClasses() {
     if(!$this->loadClass('styler')) $this->throwError("500 - Internal Error", "Error loading Styler class, invalid or nonexistent file!");
+		if(!$this->loadClass('controller')) $this->throwError("500 - Internal Error", "Error loading Controller class, invalid or nonexistent file!");
   }
 
   private function loadController($controller) {
@@ -101,8 +102,8 @@ class App {
   }
 
 	private function connectDatabase() {
-	  global $pdo_mysql;
-	  $pdo_mysql = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_username, $this->db_password);
+	  global $pdo;
+	  $pdo = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_username, $this->db_password);
 	  return true;
   }
 
@@ -249,15 +250,14 @@ class App {
 				if (ctype_alnum(str_replace(array("_", "-", ".", " "), "", $key))) {
 					if (is_array($val)) {
 						$cleandata[$key] = $this->sanitizeInputVars($val);
-						return;
+						continue;
 					}
 					$val = str_replace(chr(0), "", $val);
 					$cleandata[$key] = htmlspecialchars($val, ENT_QUOTES);
 					if (@get_magic_quotes_gpc()) {
 						$cleandata[$key] = stripslashes($cleandata[$key]);
-						return;
+						continue;
 					}
-					return;
 				}
 			}
 		} else {

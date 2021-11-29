@@ -6,11 +6,5 @@ if (!class_exists("App")) {
 }
 $app = new App();
 $app->processRequest();
-/*global $ALLNIME_Sys;
-global $ALLNIME_Styler;
-$ALLNIME_Styler->setTitle('Allnimes');
-$ALLNIME_Styler->initPage();
-$ALLNIME_Styler->setTemplate('home');
-$ALLNIME_Styler->output();*/
 
 ?>

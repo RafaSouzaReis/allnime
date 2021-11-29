@@ -22,19 +22,25 @@
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
+            <?php if ($this->getAssign('showBubble')) { ?>
+            <div class="info-bubble show <?php echo $this->getAssign('bubbleType'); ?>" role="alert">
+              <?php echo $this->getAssign('bubbleContent'); ?></div>
+            <?php } ?>
+            <?php if ($this->getAssign('showForm')) { ?>
             <h3 class="card-title" style="margin-bottom: 20px;"><?php echo lang("register"); ?></h3>
             <form data-form-type="register" action="./register" method="post">
               <div class="mb-3">
-                <input class="form-control" placeholder="<?php echo lang("username"); ?>" type="username"
-                  autoComplete="current-username" data-form-type="username" pattern="[a-zA-Z0-9]+" required />
+                <input class="form-control" type="username" name="username"
+                  placeholder="<?php echo lang("username"); ?>" autoComplete="current-username"
+                  data-form-type="username" pattern="^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$" required />
               </div>
               <div class="mb-3">
-                <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="E-mail"
+                <input class="form-control" type="email" name="email" aria-describedby="emailHelp" placeholder="E-mail"
                   autoComplete="email" data-form-type="email" required />
               </div>
               <div class="mb-3">
-                <input class="form-control" placeholder="<?php echo lang("password"); ?>" type="password"
-                  autoComplete="current-password" data-form-type="password" required />
+                <input class="form-control" type="password" name="password" autoComplete="current-password"
+                  data-form-type="password" placeholder="<?php echo lang("password"); ?>" required />
               </div>
               <button class="btn btn-block btn-green my-1 w-100" type="submit">
                 <?php echo lang("signin"); ?>
@@ -43,6 +49,7 @@
             <a href="./forgot-password" class="btn btn-block my-1 w-100 btn-lighter">
               <?php echo lang("forgot_password"); ?>
             </a>
+            <?php } ?>
             <hr />
             <a href="./login" class="btn btn-darkgrey btn-block w-100">
               Login

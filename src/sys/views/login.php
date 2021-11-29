@@ -20,6 +20,10 @@
       <div class="col-12 col-md-5 col-lg-5 d-table">
         <div class="login-card">
           <div class="card-body text-center">
+            <?php if ($this->getAssign('showBubble')) { ?>
+            <div class="info-bubble show <?php echo $this->getAssign('bubbleType'); ?>" role="alert">
+              <?php echo $this->getAssign('bubbleContent'); ?></div>
+            <?php } ?>
             <h3 class="card-title" style="margin-bottom: 20px;"><?php echo lang("login"); ?></h3>
             <form data-form-type="login" action="./login" method="post">
               <div class="mb-3">

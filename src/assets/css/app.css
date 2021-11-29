@@ -310,3 +310,36 @@ body.dark {
 .anime-fadebottom {
   background-image: linear-gradient(180deg, transparent, black, black);
 }
+
+.info-bubble {
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  padding: 8px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  margin-bottom: 0px;
+}
+
+.info-bubble.error {
+  background: #ec0037 !important;
+}
+
+.info-bubble.success {
+  background: #00a128 !important;
+}
+
+.info-bubble.info {
+  background: #008cff !important;
+}
+
+.info-bubble.show {
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-bottom: 30px;
+}
