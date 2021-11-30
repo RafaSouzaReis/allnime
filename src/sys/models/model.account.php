@@ -13,6 +13,15 @@ class Account {
     $this->username = $username;
   }
  
+  public function getId() { return $this->id; }
+  public function getEmail() { return $this->email; }
+  public function getPassword() { return $this->password; }
+  public function getUsername() { return $this->username; }
+
+  public function setEmail($email) { $this->email = $email; }
+  public function setPassword($password) { $this->password = $password; }
+  public function setUsername($username) { $this->username = $username; }
+
   public function update() {
     global $pdo;
     $stmt = $pdo->prepare("UPDATE account SET email=?, password=?, username=? WHERE id=?;");
@@ -27,34 +36,6 @@ class Account {
 
   public function login($rawPassword) {
     return password_verify($rawPassword, $this->password);
-  }
-
-  public function getId() {
-    return $this->id;
-  }
-
-  public function getEmail() {
-    return $this->email;
-  }
-
-  public function setEmail($email) {
-    $this->email = $email;
-  }
-
-  public function getPassword() {
-    return $this->password;
-  }
-
-  public function setPassword($password) {
-    $this->password = $password;
-  }
-
-  public function getUsername() {
-    return $this->username;
-  }
-
-  public function setUsername($username) {
-    $this->username = $username;
   }
 
   public static function new($email, $password, $username) {

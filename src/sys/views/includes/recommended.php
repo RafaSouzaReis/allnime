@@ -1,45 +1,15 @@
+<?php if ($this->existAssign('recommended')) { ?>
 <div class="poster-row">
   <h2><?php echo lang("recommended"); ?></h2>
   <div class="row-posters" id="recommended-list">
-    <button class="row-btn" onClick="turnLeft('recommended-list')"><span><i
-          class="fas fa-chevron-left"></i></span></button>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/695/large.jpg" alt="macDonald">
+    <button class="row-btn" onClick="turnLeft('recommended-list')"><span><i class="fas fa-chevron-left"></i></span></button>
+    <?php foreach ($this->getAssign('recommended') as $result) { ?>
+    <a class="row-poster" href="anime?id=<?php echo $result->getId(); ?>">
+      <img src="<?php echo $result->getPicture(); ?>" alt="Capa <?php echo $result->getName(); ?>">
     </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/1517/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/11999/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/100/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/9135/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/7099/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/manga/poster_images/41222/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/41971/original.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/13209/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/244/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/42080/large.jpg" alt="macDonald">
-    </a>
-    <a class="row-poster" href="anime">
-      <img src="https://media.kitsu.io/anime/poster_images/41024/large.jpg" alt="macDonald">
-    </a>
+    <?php } ?>
     <button class="row-btn row-btn-right" onClick="turnRight('recommended-list')"><span><i
           class="fas fa-chevron-right"></i></span></button>
   </div>
 </div>
+<?php } ?>

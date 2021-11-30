@@ -23,6 +23,16 @@ class Anime {
     $this->releaseDate = $releaseDate;
   }
 
+  public function getId() { return $this->id; }
+  public function getName() { return $this->name; }
+  public function getFullName() { return $this->fullName; }
+  public function getDescription() { return $this->description; }
+  public function getPicture() { return $this->picture; }
+  public function getKitsuId() { return $this->kitsuId; }
+  public function getType() { return $this->type; }
+  public function getAgeGroup() { return $this->ageGroup; }
+  public function getReleaseDate() { return $this->releaseDate; }
+
   public function update() {
     global $pdo;
     $stmt = $pdo->prepare("UPDATE anime SET name=?, full_name=?, description=?, picture=?, kitsu_id=?, type=?, age_group=?, release_date=? WHERE id=?;");
@@ -57,12 +67,34 @@ class Anime {
 
   public static function getByName($name, $limit = 1) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT id, name, full_name, description, picture, kitsu_id, type, age_group, release_date FROM anime WHERE name LIKE %?%;");
+    $stmt = $pdo->prepare("SELECT id, name, full_name, description, picture, kitsu_id, type, age_group, release_date FROM anime WHERE name LIKE %?% LIMIT :limit;");
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->execute([$id]); 
-    $result = $stmt->fetchAll(PDO::FETCH_NUM);
-    if ($result) {
-      $anime = new Anime($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8]);
-      return $anime;
+    $results = $stmt->fetchAll(PDO::FETCH_NUM);
+    if ($results) {
+      $animes = [];
+      foreach ($results as $result) {
+        $anime = new Anime($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8]);
+        array_push($animes, $anime);
+      }
+      return $animes;
+    }
+    return null;
+  }
+
+  public static function getNews($limit = 15) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT id, name, full_name, description, picture, kitsu_id, type, age_group, release_date FROM anime ORDER BY release_date DESC LIMIT :limit;");
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+    $stmt->execute(); 
+    $results = $stmt->fetchAll(PDO::FETCH_NUM);
+    if ($results) {
+      $animes = [];
+      foreach ($results as $result) {
+        $anime = new Anime($result[0], $result[1], $result[2], $result[3], $result[4], $result[5], $result[6], $result[7], $result[8]);
+        array_push($animes, $anime);
+      }
+      return $animes;
     }
     return null;
   }

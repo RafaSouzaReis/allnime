@@ -73,7 +73,8 @@ class App {
 	private function parseUrl() {
 		$url = filter_input(INPUT_SERVER, 'REQUEST_URI');
 		$url = str_replace($this->base_url, '', $url);
-    return explode('/', $url);
+		$url = explode("?", $url, 2);
+    return explode('/', $url[0]);
   }
 
   private function loadClasses() {
