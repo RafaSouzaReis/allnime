@@ -4,17 +4,14 @@
       <a class="btn text-white" href="./"><i class="fas fa-arrow-left fa-2x"></i></a>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-7 col-lg-7">
-        <div style="position: relative; height: 100%;">
-          <div
-            style="margin: 0; position: absolute; top: 50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
-            <div class="brand text-center mb-3">
-              <a href="./">
-                <img src="assets/img/logo.svg" alt="Logo" height="50" loading="lazy" />
-              </a>
-            </div>
-            <h4><?php echo lang("slogan"); ?></h4>
+      <div class="col-sm-12 col-md-7 col-lg-7 center-v">
+        <div>
+          <div class="brand text-center mb-3">
+            <a href="./">
+              <img src="assets/img/logo.svg" alt="Logo" height="50" loading="lazy" />
+            </a>
           </div>
+          <h4><?php echo lang("slogan"); ?></h4>
         </div>
       </div>
       <div class="col-12 col-md-5 col-lg-5 d-table">

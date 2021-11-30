@@ -1,16 +1,16 @@
 <?php
 
 function useModel($model) {
-  require(ROOT . "/models/model." . $model . ".php");
+  require_once(ROOT . "/models/model." . $model . ".php");
 }
 
-require(ROOT . "/models/model.account.php");
+require_once(ROOT . "/models/model.account.php");
 
 class BaseController {
 
   protected $app;
   protected $styler;
-  protected $loggedAccount;
+  protected $account;
 
   public function __construct($app, $styler) {
     $this->app = $app;
@@ -21,10 +21,10 @@ class BaseController {
     if (isset($_SESSION['accountId'])) {
       global $pdo;
       $id = $_SESSION['accountId'];
-      $this->loggedAccount = Account::getById($id);
-      if ($this->loggedAccount != null) {
+      $this->account = Account::getById($id);
+      if ($this->account != null) {
         $this->styler->assign('logged', true);
-        $this->styler->assign('account', $this->loggedAccount);
+        $this->styler->assign('account', $this->account);
       } else {
         $this->styler->assign('logged', false);
       }

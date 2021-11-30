@@ -1,25 +1,53 @@
 <?php $this->includes('navbar'); ?>
 <div class="anime-container anime-fadebottom">
-  <img class="anime-poster" src="https://media.kitsu.io/anime/poster_images/3936/large.jpg" alt="macDonald">
+  <img class="anime-poster" src="<?php echo $this->getAssign('anime')->getPicture(); ?>" alt="macDonald">
   <div class="anime-contents">
-    <h1 class="anime-title">Fullmetal Alchemist: Brotherhood</h1>
+    <h1 class="anime-title"><?php echo $this->getAssign('anime')->getName(); ?></h1>
     <div class="anime-icons">
-      <div><i class="fas fa-thumbs-up"></i></div>
-      <div class="outline">16</div>
+      <div class="outline">
+        <?php
+        switch ($this->getAssign('anime')->getAgeGroup()) {
+          case 0:
+            echo "P";
+            break;
+          case 1:
+            echo "PG";
+            break;
+          case 2:
+            echo "R";
+            break;
+          case 3:
+            echo "R18";
+            break;
+        }
+        ?></div>
       <div class="fill">HD</div>
       <div class="fill">5.1</div>
     </div>
     <div class="anime-tags"></div>
-    <div class="anime-description">
-      O anime segue a história dos irmãos Elric, que recorrem à alquimia – tão minuciosamente estudada pelo pais dos meninos – para tentar trazer sua mãe de volta à vida. 
-      Entretanto os irmãos acabam não cumprindo uma das leis fundamentais da alquimia, a tal da TROCA EQUIVALENTE.
-    </div>
+    <div class="anime-description"><?php echo $this->getAssign('anime')->getDescription(); ?></div>
+    <?php if ($this->existAssign('logged') && $this->getAssign('logged') == true) { ?>
     <div class="anime-buttons">
-      <buttons class="anime-button"><i class="far fa-clock"></i> <?php echo lang("watch_later"); ?></butons>
+      <?php if ($this->getAssign('alreadyWatched') == false) { ?>
+      <form method="post" style="display: inline-block;">
+        <input type="hidden" name="watchLater" id="watchLater"
+          value="<?php if ($this->getAssign('watchLater')) echo '0'; else echo '1'; ?>" />
+        <button type="submit" class="anime-button <?php if ($this->getAssign('watchLater')) echo 'active'; ?>">
+          <i
+            class="<?php if ($this->getAssign('watchLater')) echo 'fas'; else echo 'far'; ?> fa-clock"></i>&nbsp;<?php echo lang("watch_later"); ?>
+        </button>
+      </form>
+      <?php } ?>
+      <form method="post" style="display: inline-block;">
+        <input type="hidden" name="alreadyWatched" id="alreadyWatched"
+          value="<?php if ($this->getAssign('alreadyWatched')) echo '0'; else echo '1'; ?>" />
+        <button type="submit" class="anime-button <?php if ($this->getAssign('alreadyWatched')) echo 'active'; ?>">
+          <i
+            class="<?php if ($this->getAssign('alreadyWatched')) echo 'fas'; else echo 'far'; ?> fa-check-circle"></i>&nbsp;<?php echo lang("already_watched"); ?>
+        </button>
+      </form>
     </div>
-    <div class="anime-buttons">
-      <buttons class="anime-button"><i class="far fa-check-circle"></i> <?php echo lang("already_watched"); ?> </butons>
-    </div>
+    <?php } ?>
   </div>
 </div>
 <div class="bg-black">
