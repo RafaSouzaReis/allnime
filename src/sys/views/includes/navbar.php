@@ -34,8 +34,7 @@
             <?php echo $this->getAssign('account')->getUsername(); ?>
           </a>
           <ul class="dropdown-menu dropdown-menu-end mr-auto" aria-labelledby="navbarDropdown" right>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>

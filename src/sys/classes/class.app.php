@@ -105,6 +105,7 @@ class App {
 	private function connectDatabase() {
 	  global $pdo;
 	  $pdo = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_username, $this->db_password);
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  return true;
   }
 

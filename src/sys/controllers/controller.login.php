@@ -32,25 +32,32 @@ class Controller extends BaseController {
         $this->styler->assign('bubbleContent', 'Password must be between 8 and 64 characters long.');
         return;
       }
-      $account = Account::getByEmail($email);
-      if ($account == null) {
+      try {
+        $account = Account::getByEmail($email);
+        if ($account == null) {
+          $this->styler->assign('showForm', true);
+          $this->styler->assign('showBubble', true);
+          $this->styler->assign('bubbleType', 'error');
+          $this->styler->assign('bubbleContent', 'There is no account with this email address.');
+          return;
+        }
+        if ($account->login($password)) {
+          $_SESSION['logged'] = true;
+          $_SESSION['accountId'] = $account->getId();
+          header('Location: ./');
+          exit();
+        } else {
+          $this->styler->assign('showForm', true);
+          $this->styler->assign('showBubble', true);
+          $this->styler->assign('bubbleType', 'error');
+          $this->styler->assign('bubbleContent', 'Wrong or invalid password.');
+          return;
+        }
+      } catch (Exception $e) {
         $this->styler->assign('showForm', true);
         $this->styler->assign('showBubble', true);
         $this->styler->assign('bubbleType', 'error');
-        $this->styler->assign('bubbleContent', 'There is no account with this email address.');
-        return;
-      }
-      if ($account->login($password)) {
-        $_SESSION['logged'] = true;
-        $_SESSION['accountId'] = $account->getId();
-        header('Location: ./');
-        exit();
-      } else {
-        $this->styler->assign('showForm', true);
-        $this->styler->assign('showBubble', true);
-        $this->styler->assign('bubbleType', 'error');
-        $this->styler->assign('bubbleContent', 'Wrong or invalid password.');
-        return;
+        $this->styler->assign('bubbleContent', 'An unknown error has occurred, please try again later.');
       }
     }
     $this->styler->assign('showForm', true);

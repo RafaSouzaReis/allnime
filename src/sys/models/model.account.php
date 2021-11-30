@@ -13,8 +13,16 @@ class Account {
     $this->username = $username;
   }
  
-  public function save() {
+  public function update() {
+    global $pdo;
+    $stmt = $pdo->prepare("UPDATE account SET email=?, password=?, username=? WHERE id=?;");
+    $stmt->execute([$this->email, $this->password, $this->username, $this->id]);
+  }
 
+  public function delete() {
+    global $pdo;
+    $stmt = $pdo->prepare("DELETE FROM account WHERE id=?");
+    $stmt->execute([$this->id]);
   }
 
   public function login($rawPassword) {
@@ -51,7 +59,7 @@ class Account {
 
   public static function new($email, $password, $username) {
     global $pdo;
-    $stmt = $pdo->prepare('INSERT INTO account (email, password, username) VALUES(?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO account (email, password, username) VALUES (?, ?, ?);');
     $stmt->execute([$email, $password, $username]); 
     $instance = new self($pdo->lastInsertId(), $email, $password, $username);
     return $instance;
@@ -59,7 +67,7 @@ class Account {
 
   public static function getById($id) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE id=?");
+    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE id=?;");
     $stmt->execute([$id]); 
     $result = $stmt->fetch(PDO::FETCH_NUM);
     if ($result) {
@@ -71,7 +79,7 @@ class Account {
 
   public static function getByEmail($email) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE email=?");
+    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE email=?;");
     $stmt->execute([$email]); 
     $result = $stmt->fetch(PDO::FETCH_NUM);
     if ($result) {
@@ -83,7 +91,7 @@ class Account {
 
   public static function getByUsername($username) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE username=?");
+    $stmt = $pdo->prepare("SELECT id, email, password, username FROM account WHERE username=?;");
     $stmt->execute([$username]); 
     $result = $stmt->fetch(PDO::FETCH_NUM);
     if ($result) {
