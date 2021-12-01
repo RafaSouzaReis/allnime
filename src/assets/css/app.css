@@ -252,6 +252,7 @@ body.dark {
 
 .anime-icons {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 
@@ -260,17 +261,20 @@ body.dark {
   border-radius: 4px;
   margin-left: 5px;
   color: #4d4d4d;
+  margin-bottom: 5px;
 }
 
 .anime-icons .outline {
   border: 1px #4d4d4d solid;
   font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .anime-icons .fill {
   background-color: #4d4d4d;
   color: #101010;
   font-weight: 1000;
+  margin-bottom: 5px;
 }
 
 .anime-description {
