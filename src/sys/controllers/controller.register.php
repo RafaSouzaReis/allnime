@@ -64,9 +64,7 @@ class Controller extends BaseController {
       $password = password_hash($rawPassword, PASSWORD_DEFAULT);
       try {
         $account = Account::new($email, $password, $username);
-        $this->styler->assign('showBubble', true);
-        $this->styler->assign('bubbleType', 'success');
-        $this->styler->assign('bubbleContent', 'Account created successfully!');
+        header('Location: ./login');
       } catch (Exception  $e) {
         $this->styler->assign('showBubble', true);
         $this->styler->assign('bubbleType', 'error');
