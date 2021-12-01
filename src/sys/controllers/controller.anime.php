@@ -1,6 +1,7 @@
 <?php
 
 useModel('anime');
+useModel('genre');
 
 class Controller extends BaseController {
 
@@ -16,6 +17,13 @@ class Controller extends BaseController {
       exit();
     }
     $this->styler->assign('anime', $anime);
+
+    $genres = Genre::getByAnimeId($anime->getId());
+    if ($genres != null) {
+      $this->styler->assign('genres', $genres);
+    } else {
+      $this->styler->assign('genres', []);
+    }
 
     $similar = Anime::getSimilar($anime->getId());
     if ($similar == null) {
@@ -40,7 +48,7 @@ class Controller extends BaseController {
       $this->styler->assign('alreadyWatched', $isAlreadyWatched);
     }
 
-    $this->styler->setTitle('AllNimes - Anime');
+    $this->styler->setTitle('AllNimes - ' . $anime->getName());
     $this->styler->init();
     $this->styler->setTemplate('anime');
     $this->styler->render();

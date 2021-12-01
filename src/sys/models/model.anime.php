@@ -36,6 +36,17 @@ class Anime {
   public function getReleaseDate() { return $this->releaseDate; }
   public function getScore() { return $this->score; }
 
+  public function setName($name) { $this->name = $name; }
+  public function setFullName($fullName) { $this->fullName = $fullName; }
+  public function setDescription($description) { $this->description = $description; }
+  public function setPicture($picture) { $this->picture = $picture; }
+  public function setKitsuId($kitsuId) { $this->kitsuId = $kitsuId; }
+  public function setType($type) { $this->type = $type; }
+  public function setAgeGroup($ageGroup) { $this->ageGroup = $ageGroup; }
+  public function setReleaseDate($releaseDate) { $this->releaseDate = $releaseDate; }
+
+  public function isAnime() { return true; }
+
   public function update() {
     global $pdo;
     $stmt = $pdo->prepare("UPDATE anime SET name=?, full_name=?, description=?, picture=?, kitsu_id=?, type=?, age_group=?, release_date=? WHERE id=?;");
@@ -137,7 +148,7 @@ class Anime {
     $stmt = $pdo->prepare("SELECT id, name, full_name, description, picture, kitsu_id, type, age_group, release_date, score FROM anime WHERE name LIKE :name LIMIT :limit;");
     $stmt->bindValue(':name', '%' . $name . '%', PDO::PARAM_STR);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-    $stmt->execute([$id]); 
+    $stmt->execute(); 
     $results = $stmt->fetchAll(PDO::FETCH_NUM);
     if ($results) {
       $animes = [];
@@ -221,7 +232,7 @@ class Anime {
 
   public static function getRecommended($accountId, $limit = 15) {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT anime.id, anime.name, anime.full_name, anime.description, anime.picture, anime.kitsu_id, anime.type, anime.age_group, anime.release_date, anime.score FROM watch_later JOIN anime ON anime.id = watch_later.anime_id WHERE watch_later.account_id = :accountId ORDER BY watch_later.creation_date LIMIT :limit;");
+    $stmt = $pdo->prepare("SELECT anime.id, anime.name, anime.full_name, anime.description, anime.picture, anime.kitsu_id, anime.type, anime.age_group, anime.release_date, anime.score FROM anime_genre JOIN anime ON anime.id = anime_genre.anime_id WHERE anime_genre.genre_id IN (SELECT anime_genre.genre_id FROM already_watched JOIN anime_genre ON anime_genre.anime_id = already_watched.anime_id WHERE already_watched.account_id = :accountId) GROUP BY anime.id ORDER BY RAND() LIMIT :limit;");
     $stmt->bindValue(':accountId', $accountId, PDO::PARAM_INT);
     $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->execute(); 

@@ -1,7 +1,6 @@
 <?php
 
 useModel('anime');
-useModel('manga');
 
 class Controller extends BaseController {
   

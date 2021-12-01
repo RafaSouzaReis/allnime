@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg justify-content-center navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="./">
       <img src="assets/img/logo.svg" alt="" height="28">
@@ -8,7 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link <?php if ($this->getTemplate() == "home") echo "active"; ?>" aria-current="page"
             href="./"><?php echo lang("home"); ?></a>
@@ -26,14 +26,32 @@
             href="./about"><?php echo lang("about_us"); ?></a>
         </li>
       </ul>
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <div class="input-group mx-auto form-inline">
+            <span class="input-group-text">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search" id="search-bar-input" />
+          </div>
+          <ul class="dropdown-menu dropdown-menu-lg-end" id="search-bar-dropdown">
+            <li>
+              <h6 class="dropdown-header"><?php echo lang("search_results"); ?></h6>
+            </li>
+            <li id="search-bar-no-results"><span class="dropdown-item"><?php echo lang("no_results"); ?></span></li>
+            <div id="search-bar-results">
+            </div>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
         <?php if ($this->existAssign('logged') && $this->getAssign('logged') == true) { ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             <?php echo $this->getAssign('account')->getUsername(); ?>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end mr-auto" aria-labelledby="navbarDropdown" right>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li>
               <hr class="dropdown-divider">

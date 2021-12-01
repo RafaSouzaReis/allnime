@@ -24,4 +24,8 @@ $_LANG['username'] = 'Username';
 $_LANG['forgot_password'] = 'Forgot password';
 $_LANG['slogan'] = 'Manage and discover your favorite animes just a few clicks away.';
 $_LANG['send_email'] = 'Send e-mail';
+$_LANG['read_later'] = 'Read Later';
+$_LANG['already_read'] = 'Already Read';
+$_LANG['search_results'] = 'Search results';
+$_LANG['no_results'] = 'No results found.';
 ?>

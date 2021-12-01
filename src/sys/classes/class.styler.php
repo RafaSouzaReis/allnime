@@ -12,7 +12,11 @@ class Styler {
   }
 
   public function init() {
-    include(ROOT . '/views/base/header.php');
+		if(file_exists(ROOT . '/views/base/header.php')) {
+			include(ROOT . '/views/base/header.php');
+		} else {
+			$this->showError('Failed to get Header');
+		}
   }
 
   public function assign($key, $value) {
@@ -28,8 +32,16 @@ class Styler {
   }
 
   public function render() {
-    include(ROOT . '/views/' . $this->Template . '.php');
-    include(ROOT . '/views/base/footer.php');
+		if(file_exists(ROOT . '/views/' . $this->Template . '.php')) {
+			include(ROOT . '/views/' . $this->Template . '.php');
+		} else {
+			$this->showError('Failed to get template \'' . $this->Template. '\'');
+		}
+		if(file_exists(ROOT . '/views/base/footer.php')) {
+			include(ROOT . '/views/base/footer.php');
+		} else {
+			$this->showError('Failed to get Footer');
+		}
   }
 
 	public function getAssign($key) {
@@ -44,8 +56,12 @@ class Styler {
 		if(file_exists(ROOT . '/views/includes/' . $include . '.php')) {
 			include(ROOT . '/views/includes/' . $include . '.php');
 		} else {
-			echo '<h5 style="color: red;">Internal Error: failed to get include ' . $include. '</h5>';
+			$this->showError('Failed to get include \'' . $include. '\'');
 		}
+	}
+
+	public function showError($message) {
+		echo '<h5><span style="color: red;">Internal Error:</span> ' . $message . '.</h5>';
 	}
 
 	public function getTemplatePath() {

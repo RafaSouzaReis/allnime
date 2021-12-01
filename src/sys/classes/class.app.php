@@ -212,6 +212,10 @@ class App {
 		return $var;
 	}
 
+	public function getHeaders() {
+		return $this->headers;
+	}
+
 	public function getVar($k, $k2 = "") {
 		if ($k2) {
 			return isset($this->input[$k][$k2]) ? $this->input[$k][$k2] : "";

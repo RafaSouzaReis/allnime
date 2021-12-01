@@ -1,6 +1,7 @@
 <?php $this->includes('navbar'); ?>
 <div class="anime-container anime-fadebottom">
-  <img class="anime-poster" src="<?php echo $this->getAssign('anime')->getPicture(); ?>" alt="macDonald">
+  <img class="anime-poster" src="<?php echo $this->getAssign('anime')->getPicture(); ?>"
+    alt="Capa <?php echo $this->getAssign('anime')->getName(); ?>">
   <div class="anime-contents">
     <h1 class="anime-title"><?php echo $this->getAssign('anime')->getName(); ?></h1>
     <div class="anime-icons">
@@ -21,8 +22,9 @@
             break;
         }
         ?></div>
-      <div class="fill">HD</div>
-      <div class="fill">5.1</div>
+      <?php foreach ($this->getAssign('genres') as $result) { ?>
+      <div class="fill"><?php echo $result->getFullName(); ?></div>
+      <?php } ?>
     </div>
     <div class="anime-tags"></div>
     <div class="anime-description"><?php echo $this->getAssign('anime')->getDescription(); ?></div>

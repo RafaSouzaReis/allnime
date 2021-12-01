@@ -64,6 +64,38 @@ class Genre {
     }
     return null;
   }
+
+  public static function getByAnimeId($animeId) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT genre.id, genre.name, genre.full_name FROM anime_genre JOIN genre ON genre.id = anime_genre.genre_id WHERE anime_id=?;");
+    $stmt->execute([$animeId]); 
+    $results = $stmt->fetchAll(PDO::FETCH_NUM);
+    if ($results) {
+      $genres = [];
+      foreach ($results as $result) {
+        $genre = new Genre($result[0], $result[1], $result[2]);
+        array_push($genres, $genre);
+      }
+      return $genres;
+    }
+    return null;
+  }
+
+  public static function getByMangaId($mangaId) {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT genre.id, genre.name, genre.full_name FROM manga_genre JOIN genre ON genre.id = manga_genre.genre_id WHERE manga_id=?;");
+    $stmt->execute([$mangaId]); 
+    $results = $stmt->fetchAll(PDO::FETCH_NUM);
+    if ($results) {
+      $genres = [];
+      foreach ($results as $result) {
+        $genre = new Genre($result[0], $result[1], $result[2]);
+        array_push($genres, $genre);
+      }
+      return $genres;
+    }
+    return null;
+  }
 }
 
 ?>
