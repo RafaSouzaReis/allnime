@@ -12,22 +12,26 @@ class Controller extends BaseController {
         'results' => []
       ];
       $animes = Anime::getByName($search, 3);
-      foreach ($animes as $result) {
-        array_push($response['results'], [
-          'id' => $result->getId(),
-          'name' => $result->getName(),
-          'picture' => $result->getPicture(),
-          'type' => 0,
-        ]);
+      if ($animes) {
+        foreach ($animes as $result) {
+          array_push($response['results'], [
+            'id' => $result->getId(),
+            'name' => $result->getName(),
+            'picture' => $result->getPicture(),
+            'type' => 0,
+          ]);
+        }
       }
       $mangas = Manga::getByName($search, 3);
-      foreach ($mangas as $result) {
-        array_push($response['results'], [
-          'id' => $result->getId(),
-          'name' => $result->getName(),
-          'picture' => $result->getPicture(),
-          'type' => 1,
-        ]);
+      if ($mangas) {
+        foreach ($mangas as $result) {
+          array_push($response['results'], [
+            'id' => $result->getId(),
+            'name' => $result->getName(),
+            'picture' => $result->getPicture(),
+            'type' => 1,
+          ]);
+        }
       }
       print(json_encode($response));
     } else {

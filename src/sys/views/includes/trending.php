@@ -6,7 +6,7 @@
           class="fas fa-chevron-left"></i></span></button>
     <?php foreach ($this->getAssign('trending') as $result) { ?>
     <a class="row-poster" href="<?php if ($result->isAnime()) echo 'anime'; else echo 'manga'; ?>?id=<?php echo $result->getId(); ?>">
-      <img src="<?php echo $result->getPicture(); ?>" alt="Capa <?php echo $result->getName(); ?>">
+      <img src="<?php echo $result->getPicture(); ?>" alt="Capa <?php echo $result->getName(); ?>" loading="lazy">
     </a>
     <?php } ?>
     <button class="row-btn row-btn-right" onClick="turnRight('trending-list')"><span><i

@@ -37,7 +37,7 @@ $(document).ready(function () {
   $("#search-bar-input").focusout(function () {
     setTimeout(function() {
       $("#search-bar-dropdown").removeClass("show");
-    }, 50);
+    }, 300);
   });
   $("#search-bar-input").on(
     "input",
@@ -55,6 +55,7 @@ $(document).ready(function () {
         data: { search: value },
       })
         .done(function (e) {
+          console.log(e);
           let response = JSON.parse(e);
           let html = "";
           response["results"].forEach((result) => {
