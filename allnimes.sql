@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Nov-2021 às 22:53
+-- Tempo de geração: 01-Dez-2021 às 21:14
 -- Versão do servidor: 8.0.26
 -- versão do PHP: 7.2.7
 
@@ -74,7 +74,8 @@ CREATE TABLE `already_watched` (
 
 INSERT INTO `already_watched` (`id`, `account_id`, `anime_id`, `creation_date`) VALUES
 (12, 1, 42, '2021-11-30 21:14:10'),
-(13, 1, 41, '2021-11-30 21:14:22');
+(13, 1, 41, '2021-11-30 21:14:22'),
+(14, 1, 15, '2021-12-01 16:33:54');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,7 @@ INSERT INTO `anime` (`id`, `name`, `full_name`, `description`, `picture`, `kitsu
 (12, 'Black Clover', 'Black Clover', 'In a world where magic is everything, Asta and Yuno are both found abandoned at a church on the same day. While Yuno is gifted with exceptional magical powers, Asta is the only one in this world without any. At the age of fifteen, both receive grimoires, magic books that amplify their holder\'s magic. Asta\'s is a rare Grimoire of Anti-Magic that negates and repels his opponent\'s spells. Being opposite but good rivals, Yuno and Asta are ready for the hardest of challenges to achieve their common dream: to be the Wizard King. Giving up is never an option!\n\n(Source: Crunchyroll)', 'https://media.kitsu.io/anime/poster_images/13209/original.png', 13209, 0, 1, '2017-10-03', 0),
 (13, 'Bleach', 'Bleach', 'Ichigo Kurosaki is an ordinary high schooler—until his family is attacked by a Hollow, a corrupt spirit that seeks to devour human souls. It is then that he meets a Soul Reaper named Rukia Kuchiki, who gets injured while protecting Ichigo\'s family from the assailant. To save his family, Ichigo accepts Rukia\'s offer of taking her powers and becomes a Soul Reaper as a result.\nHowever, as Rukia is unable to regain her powers, Ichigo is given the daunting task of hunting down the Hollows that plague their town. However, he is not alone in his fight, as he is later joined by his friends—classmates Orihime Inoue, Yasutora Sado, and Uryuu Ishida—who each have their own unique abilities. As Ichigo and his comrades get used to their new duties and support each other on and off the battlefield, the young Soul Reaper soon learns that the Hollows are not the only real threat to the human world.\n[Written by MAL Rewrite]', 'https://media.kitsu.io/anime/poster_images/244/original.jpg', 244, 0, 1, '2004-10-05', 0),
 (14, 'InuYasha: The Final Act', 'InuYasha: Kanketsu-hen', 'Inuyasha, Kagome, Miroku, Sango, Shippou and their neko-mata friend Kirara, are now in the final leg of their quest to put an end to the elusive demon, Naraku and all of the chaos and evil he has caused, and to ultimately undo the unfortunate karma of the Jewel of Four Souls. Their journey, however, will not be easy as their remaining enemies put out all the stops to make sure that they do not accomplish their goal.\n\nThis TV Anime depicts Volumes 36-56 (end) of the Inuyasha manga. The story continues from the last moment seen in Inuyasha\'s original anime. Inuyasha, Kagome, Sango, Miroku and Shippou are now in the definitive quest to beat Naraku and the evil he has created and absorbed, they don\'t lose hope since their future depends on it, but the path isn\'t easy nor short so they will go through life threatening situations and must put their friendship and love on the line with wisdom to know who their friends and foes are to succeed. \n\n(Source: ANN) ', 'https://media.kitsu.io/anime/poster_images/4726/original.jpg', 4726, 0, 1, '2009-10-04', 0),
-(15, 'Brand New Animal', 'Brand New Animal', 'In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\n(Source: Anime News Network)', 'https://media.kitsu.io/anime/poster_images/42434/original.jpg', 42434, 0, 1, '2020-04-09', 0),
+(15, 'Brand New Animal', 'Brand New Animal', 'In the 21st century, the existence of animal-humans came to light after being hidden in the darkness of history. Michiru lived life as a normal human, until one day she suddenly turns into a tanuki-human. She runs away and takes refuge in a special city area called \"Anima City\" that was set up 10 years ago for animal-humans to be able to live as themselves. There Michiru meets Shirou, a wolf-human who hates humans. Through Shirou, Michiru starts to learn about the worries, lifestyle, and joys of the animal-humans. As Michiru and Shirou try to learn why Michiru suddenly turned into an animal-human, they unexpectedly get wrapped up in a large incident.\n\n(Source: Anime News Network)', 'https://media.kitsu.io/anime/poster_images/42434/original.jpg', 42434, 0, 1, '2020-04-09', 1),
 (16, 'The Ancient Magus\' Bride', 'Mahoutsukai no Yome', 'Hatori Chise has lived a life full of neglect and abuse, devoid of anything resembling love. Far from the warmth of family, she has had her share of troubles and pitfalls. Just when all hope seems lost, a fateful encounter awaits her. When a man with the head of a beast, wielding strange powers, obtains her through a slave auction, Chise\'s life will never be the same again. The man is a \"magus,\"a sorcerer of great power, who decides to free Chise from the bonds of captivity. The magus then makes a bold statement: Chise will become his apprentice--and his bride! \n\n(Source: Crunchyroll)', 'https://media.kitsu.io/anime/poster_images/13228/original.jpg', 13228, 0, 1, '2017-10-08', 0),
 (17, 'Himouto! Umaru-chan', 'Himouto! Umaru-chan', 'People are not always who they appear to be, as is the case with Umaru Doma, the perfect high school girl—that is, until she gets home! Once the front door closes, the real fun begins. When she dons her hamster hoodie, she transforms from a refined, over-achieving student into a lazy, junk food-eating otaku, leaving all the housework to her responsible older brother Taihei. Whether she\'s hanging out with her friends Nana Ebina and Kirie Motoba, or competing with her self-proclaimed \"rival\" Sylphinford Tachibana, Umaru knows how to kick back and have some fun!Himouto! Umaru-chan is a cute story that follows the daily adventures of Umaru and Taihei, as they take care of—and put up with—each other the best they can, as well as the unbreakable bonds between friends and siblings.\n[Written by MAL Rewrite]', 'https://media.kitsu.io/anime/poster_images/10067/original.jpg', 10067, 0, 1, '2015-07-09', 0),
 (18, 'Death Parade', 'Death Parade', 'After death, there is no heaven or hell, only a bar that stands between reincarnation and oblivion. There the attendant will, one after another, challenge pairs of the recently deceased to a random game in which their fate of either ascending into reincarnation or falling into the void will be wagered. Whether it\'s bowling, darts, air hockey, or anything in between, each person\'s true nature will be revealed in a ghastly parade of death and memories, dancing to the whims of the bar\'s master. Welcome to Quindecim, where Decim, arbiter of the afterlife, awaits!\n\nDeath Parade expands upon the original one-shot intended to train young animators. It follows yet more people receiving judgment—until a strange, black-haired guest causes Decim to begin questioning his own rulings.\n\n(Source: MAL Rewrite)', 'https://media.kitsu.io/anime/poster_images/9969/original.png', 9969, 0, 2, '2015-01-10', 0),
@@ -383,7 +384,13 @@ INSERT INTO `genre` (`id`, `name`, `full_name`) VALUES
 (132, 'parody', 'Parody'),
 (139, 'mecha', 'Mecha'),
 (153, 'dementia', 'Dementia'),
-(173, 'music', 'Music');
+(173, 'music', 'Music'),
+(192, 'sports', 'Sports'),
+(197, 'food', 'Food'),
+(236, 'yaoi', 'Yaoi'),
+(241, 'harem', 'Harem'),
+(310, 'gore', 'Gore'),
+(324, 'samurai', 'Samurai');
 
 -- --------------------------------------------------------
 
@@ -417,7 +424,31 @@ INSERT INTO `manga` (`id`, `name`, `full_name`, `description`, `picture`, `kitsu
 (6, 'Demon Slayer: Kimetsu no Yaiba', 'Kimetsu no Yaiba', 'Since ancient times, rumors have abounded of man-eating demons lurking in the woods. Because of this, the local townsfolk never venture outside at night. Legend has it that a demon slayer also roams the night, hunting down these bloodthirsty demons. For young Tanjirou, these rumors will soon to become his harsh reality...\n\nEver since the death of his father, Tanjirou has taken it upon himself to support his family. Although their lives may be hardened by tragedy, they\'ve found happiness. But that ephemeral warmth is shattered one day when Tanjirou finds his family slaughtered and the lone survivor, his sister Nezuko, turned into a demon. To his surprise, however, Nezuko still shows signs of human emotion and thought...\n\nThus begins Tanjirou\'s quest to fight demons and turn his sister human again.\n\n(Source: VIZ Media)\n\nVolume 7 contains a bonus chapter about Kanao Tsuyuri.\nVolume 10 contains a bonus chapter about Inosuke Hashibira.', 'https://media.kitsu.io/manga/poster_images/37280/original.jpg', 37280, 0, 1, '2016-02-15', 0),
 (7, 'One Piece', 'One Piece', 'Gol D. Roger was known as the Pirate King, the strongest and most infamous being to have sailed the Grand Line. The capture and death of Roger by the World Government brought a change throughout the world. His last words before his death revealed the location of the greatest treasure in the world, One Piece. It was this revelation that brought about the Grand Age of Pirates, men who dreamed of finding One Piece (which promises an unlimited amount of riches and fame), and quite possibly the most coveted of titles for the person who found it, the title of the Pirate King.\n\nEnter Monkey D. Luffy, a 17-year-old boy that defies your standard definition of a pirate. Rather than the popular persona of a wicked, hardened, toothless pirate who ransacks villages for fun, Luffy’s reason for being a pirate is one of pure wonder; the thought of an exciting adventure and meeting new and intriguing people, along with finding One Piece, are his reasons of becoming a pirate. Following in the footsteps of his childhood hero, Luffy and his crew travel across the Grand Line, experiencing crazy adventures, unveiling dark mysteries and battling strong enemies, all in order to reach One Piece.\n\n(Source: MAL Rewrite)', 'https://media.kitsu.io/manga/poster_images/38/original.jpg', 38, 0, 0, '1997-07-22', 0),
 (8, 'Attack on Titan', 'Attack on Titan', 'A century ago, the grotesque giants known as Titans appeared and consumed all but a few thousand humans. The survivors took refuge behind giant walls. Today, the threat of the Titans is a distant memory, and a boy named Eren yearns to explore the world beyond Wall Maria. But what began as a childish dream will become an all-too-real nightmare when the Titans return and humanity is once again on the brink of extinction … Attack on Titan is the award-winning and New York Times-bestselling series that is the manga hit of the decade! Spawning the monster hit anime TV series of the same name, Attack on Titan has become a pop culture sensation. \n\n(Source: Kodansha Comics)\n\nVolume 3 contains the special story \"Rivai Heishichou\" (リヴァイ兵士長, Captain Levi).\nVolume 5 contains the side story \"Ilse no Techou\" (イルゼの手帳, Ilse\'s Notebook).', 'https://media.kitsu.io/manga/poster_images/14916/original.jpg', 14916, 0, 2, '2009-09-09', 0),
-(9, 'Tokyo Ghoul', 'Tokyo Ghoul', 'Kaneki Ken is an unassuming university student living in Tokyo. However, his comfortable life is turned on its head after a string of violent murders pulls him unwillingly into the city\'s ghoul inhabited underbelly; a place that lives by the rule of eat or be eaten. Now, every day is a struggle to protect his life, his loved ones, and his humanity.', 'https://media.kitsu.io/manga/poster_images/7176/original.jpg', 7176, 0, 2, '2011-09-08', 0);
+(9, 'Tokyo Ghoul', 'Tokyo Ghoul', 'Kaneki Ken is an unassuming university student living in Tokyo. However, his comfortable life is turned on its head after a string of violent murders pulls him unwillingly into the city\'s ghoul inhabited underbelly; a place that lives by the rule of eat or be eaten. Now, every day is a struggle to protect his life, his loved ones, and his humanity.', 'https://media.kitsu.io/manga/poster_images/7176/original.jpg', 7176, 0, 2, '2011-09-08', 0),
+(12, 'Food Wars: Shokugeki no Soma', 'Shokugeki no Souma', 'Soma Yukihira\'s old man runs a small family restaurant in the less savory end of town. Aiming to one day surpass his father\'s culinary prowess, Soma hones his skills day in and day out until one day, out of the blue, his father decides to enroll Soma in a classy culinary school!\n\nCan Soma really cut it in a place that prides itself on a 10 percent graduation rate? And can he convince the beautiful, domineering heiress to the school that he belongs there at all?!\n\n(Source: VIZ Books)\n\nNote: The 3 chapter Le dessert epilogue is counted as chapters 316-318', 'https://media.kitsu.io/manga/poster_images/1554/original.jpg', 1554, 0, 2, '2012-11-26', 0),
+(13, 'Berserk', 'Berserk', 'Guts, known as the Black Swordsman, seeks sanctuary from the demonic forces that pursue him and his woman, and also vengeance against the man who branded him as an unholy sacrifice. Aided only by his titanic strength, skill, and sword, Guts must struggle against his bleak destiny, all the while fighting with a rage that might strip him of his humanity. Berserk is a dark and brooding story of outrageous swordplay and ominous fate, in the theme of Shakespeare\'s Macbeth.\n\nIncluded one-shot:\nVolume 14: Berserk: The Prototype', 'https://media.kitsu.io/manga/poster_images/8/original.png', 8, 0, 2, '1989-08-25', 0),
+(14, 'Naruto', 'Naruto', 'Before Naruto\'s birth, a great demon fox had attacked the Hidden Leaf Village. A man known as the 4th Hokage sealed the demon inside the newly born Naruto, causing him to unknowingly grow up detested by his fellow villagers. Despite his lack of talent in many areas of ninjutsu, Naruto strives for only one goal: to gain the title of Hokage, the strongest ninja in his village. Desiring the respect he never received, Naruto works towards his dream with fellow friends Sasuke and Sakura and mentor Kakashi as they go through many trials and battles that come with being a ninja.', 'https://media.kitsu.io/manga/poster_images/35/original.png', 35, 0, 0, '1999-09-21', 0),
+(15, 'No Game No Life', 'No Game No Life', 'Meet Sora and Shiro, a brother and sister who are loser shut-ins by normal standards. But these siblings don\'t play by the rules of the \"crappy game\" that is average society. In the world of gaming, this genius pair reigns supreme, their invincible avatar so famous that it\'s the stuff of urban legend.\n\nSo when a young boy calling himself God summons the siblings to a fantastic alternate world where war is forbidden and all conflicts - even those involving national borders - are decided by the outcome of games, Sora and Shiro have pretty much hit the jackpot. But they soon learn that in this world, humanity, cornered and outnumbered by other species, survives within the confines of one city. Will Sora and Shiro, two failures at life, turn out to be the saviors of mankind? Let the games begin...!\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/5927/original.jpg', 5927, 0, 2, '2012-04-25', 0),
+(17, 'Spice & Wolf', 'Spice & Wolf', 'The life of a traveling merchant is a lonely one, a fact with which Kraft Lawrence is well acquainted. Wandering from town to town with just his horse, cart, and whatever wares have come his way, the peddler has pretty well settled into his routine—that is, until the night Lawrence finds a wolf goddess asleep in his cart. Taking the form of a fetching girl with wolf ears and a tail, Holo has wearied of tending to harvests in the countryside and strikes up a bargain with the merchant to lend him the cunning of “Holo the Wisewolf” to increase his profits in exchange for taking her along on his travels. What kind of businessman could turn down such an offer? Lawrence soon learns, though, that having an ancient goddess as a traveling companion can be a bit of a mixed blessing. Will this wolf girl turn out to be too wild to tame?\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/18471/original.jpg', 18471, 0, 1, '2006-02-10', 0),
+(18, 'Beastars', 'Beastars', 'In a world populated by anthropomorphic animals, herbivores and carnivores coexist with each other. For the adolescences of Cherryton Academy, school life is filled with hope, romance, distrust, and uneasiness.The main character is Regoshi the wolf, a member of the drama club. Despite his menacing appearance, he has a very gentle heart. Throughout most of his life, he has always been an object of fear and hatred by other animals, and he\'s been quite accustomed to that lifestyle. But soon, he finds himself becoming more involved with his fellow classmates who have their own share of insecurities and finds his life in school changing slowly.(Source: Batoto)', 'https://media.kitsu.io/manga/poster_images/39242/original.jpg', 39242, 0, 2, '2016-09-08', 0),
+(19, 'Konosuba: God\'s Blessing on This Wonderful World!', 'Kono Subarashii Sekai ni Shukufuku wo!', 'Game loving shut-in Kazuma Satou\'s life as a young schoolboy in Japan abruptly comes to an early end...or at least it was supposed to. When he opens his eyes, though, he sees a beautiful goddess that offers him a once in an after-lifetime chance to be reborn in a parallel world. The catch is that the world is violent and threatened by a growing evil! Fortunately, he can choose any one thing to bring with him. So he chooses the goddess, Aqua! And so his adventure with his gorgeous companion begins—if he could just get enough money and food to survive, keep his goddess out of trouble, and avoid grabbing the attention of the Demon King\'s army!\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/26844/original.jpg', 26844, 0, 1, '2013-10-01', 0),
+(20, 'Yuuna of Yuragi Manor', 'Yuragi-sou no Yuuna-san', 'Fuyuzora Kogarashi has the ability to see supernatural, and has been possessed by ghosts since he was a kid. This has caused a lot of trouble in his life, but now he has learned to fight back against the evil spirits! Unfortunately, he\'s now also very poor, homeless, and hoping for a happier, more normal, high school life. In his search for housing, he\'s introduced to a very cheap boarding house called Yuragisou, which was formerly a popular hot springs inn. It\'s so cheap because the house is haunted by the spirit of a high school student whose corpse was found there.\n\nKogarashi doesn\'t think this is going to be a problem for him, and the rest of the house\'s tenants appear to be sexy women. While relaxing in the hot springs, though, he finds there is an issue with his ghost-banishing plan; Yuragisou\'s ghost is a 16-year-old girl named Yuna, who lives in his room. Kogarashi has no desire to hurt a ghost girl, and instead he ends up agreeing to help her to figure out her unfinished business. That way, she can move onto the afterlife before turning evil and falling into hell. Once it is clear that he is fine with Yuna, the other tenants reveal their own supernatural secrets—his life in Yuragisou is going to be far from ordinary!\n\n(Source: MU)', 'https://media.kitsu.io/manga/poster_images/37540/original.jpg', 37540, 0, 2, '2016-02-08', 0),
+(22, 'The Seven Deadly Sins', 'Nanatsu no Taizai', 'When they were accused of trying to overthrow the monarchy, the feared warriors the Seven Deadly Sins were sent into exile. Princess Elizabeth discovers the truth - the Sins were framed by the king\'s guard, the Holy Knights - too late to prevent them from assassinating her father and seizing the throne!\n\nNow the princess is on the run, seeking the Sins to help her reclaim the kingdom. But the first Sin she meets, Meliodas, is a little innkeeper with a talking pig. He doesn\'t even have a real sword! Have the legends of the Sins\' strength been exaggerated?\n\n(Source: Kodansha Comics)', 'https://media.kitsu.io/manga/poster_images/24208/original.jpg', 24208, 0, 2, '2012-10-10', 0),
+(23, 'The Promised Neverland', 'Yakusoku no Neverland', 'Emma and her friends have a pretty good life at the orphanage they grew up in. Though the rules may be strict, the caretaker is kind. But why are the children forbidden from ever leaving...?\n\n(Source: VIZ Media)', 'https://media.kitsu.io/manga/poster_images/38047/original.png', 38047, 0, 2, '2016-08-01', 0),
+(24, 'Blue Exorcist', 'Ao no Exorcist', 'This world consists of two dimensions joined as one, like a mirror. The first is the world in which the humans live, Assiah. The other is the world of demons, Gehenna. Ordinarily, travel between the two, and indeed any kind of contact between the two, is impossible. However the demons can pass over into this world by possessing anything that exist within it. Satan the god of demons, but there\'s one thing that he doesn\'t have, and that\'s a substance in the human world that is powerful enough to contain him!! For that purpose he created Rin, his son from a human woman, but will his son agree to his plans? Or will he become something else...? An exorcist?\n\n(Source: MU)', 'https://media.kitsu.io/manga/poster_images/24155/original.jpg', 24155, 0, 0, '2009-04-04', 0),
+(25, 'Fairy Tail', 'Fairy Tail', 'In the mystical realm of Earth Land, magic exists at the core of everyday life for its inhabitants, from transportation to utilities and everything in between. However, even with all its benefits, magic can also be used for great evil; therefore, to prevent dark forces from upsetting the natural order of things, there exists a system of magical guilds in the Kingdom of Fiore. Under the command of their respective guild masters, these guilds are made up of witches and wizards who take on various job requests to earn fame and fortune. One particular guild stands high above the rest in both strength and spirit, and its name is Fairy Tail.\n\nIn his quest to find his dragon foster father—Igneel—Natsu Dragneel, a fiery and reckless mage, and his partner Happy run into a young celestial mage by the name of Lucy Heartfilia, who reveals that it\'s her dream to become a full-fledged wizard and join the Fairy Tail guild. After rescuing her from an abduction attempt, Natsu offers her a home in Fairy Tail. Now a member of the guild, Lucy teams up with Natsu and befriends fellow wizards Gray Fullbuster and Erza \"Titania\" Scarlet. Together, this motley crew set out on their many adventures, gaining many faithful allies and deadly foes along the way.\n\n(Source: MAL Rewrite)', 'https://media.kitsu.io/manga/poster_images/1361/original.jpg', 1361, 0, 2, '2006-08-02', 0),
+(26, 'ReLIFE', 'ReLIFE', 'The story follows Kaizaki Arata, a 27-year-old jobless man, who fails at every job interview he had after quitting his last company. His life changes after he met Yoake Ryou of the ReLife Research Institute, who offered him a drug that can change his appearance to 17-years-old and to become a subject in an experiment for one year. Thus, he begins his life as a high school student once more. (Source: MU)', 'https://media.kitsu.io/manga/poster_images/27175/original.jpg', 27175, 0, 1, '2013-10-12', 0),
+(27, 'Bleach', 'Bleach', 'Ichigo Kurosaki has always been able to see ghosts, but this ability doesn\'t change his life nearly as much as his close encounter with Rukia Kuchiki, a Soul Reaper and member of the mysterious Soul Society. While fighting a Hollow, an evil spirit that preys on humans who display psychic energy, Rukia attempts to lend Ichigo some of her powers so that he can save his family; but much to her surprise, Ichigo absorbs every last drop of her energy. Now a full-fledged Soul Reaper himself, Ichigo quickly learns that the world he inhabits is one full of dangerous spirits and, along with Rukia—who is slowly regaining her powers—it\'s Ichigo\'s job to protect the innocent from Hollows and help the spirits themselves find peace.\n\n(Source: ANN)\n\nNote: Chapter count includes the following 19 extra chapters.\n\nVolume 10 contains chapter 88.5 \"Karakura Super Heroes.\" --not included in the count.\nVolume 12 contains chapter 0.8 \"A Wonderful Error.\"\nVolume 15 contains chapter -17 \"Soreyuku Hoshiboshi no Tame no Zensoukyoku\" (逸れゆく星々の為の前奏曲, Prelude for the Straying Stars).\nVolume 20 contains chapter -12.5 \"Blooming Under a Cold Moon.\"\nVolume 23 contains the two-part chapter 0 \"Side-A The Sand\" and \"Side-B The Rotator.\"\nVolume 32 contains chapter -16 \"Hyougen ni Shisu\" (氷原に死す, Dying in the Ice Fields).\nVolume 36 consists of chapters -108 to -100 \"Turn Back the Pendulum.\"\nVolume 37 contains chapters -99 to -97 \"Turn Back the Pendulum\" and \"Let Stop the Pendulum.\"\nVolume 70 contains chapter 520.5 \"Walk Under Two Letters\" (520.5 WALK UNDER TWO LETTERS).\n\nTotal chapter count is 705.', 'https://media.kitsu.io/manga/poster_images/37/original.jpg', 37, 0, 0, '2001-08-07', 0),
+(28, 'My Little Monster', 'Tonari no Kaibutsu-kun', 'Mizutani Shizuku is the type of person who only cares for her own grades. But when she accidentally delivers lesson notes to Yoshida Haru, he becomes convinced they are friends.\n\nHaru turns out to have a very innocent personality, but who would\'ve thought that Haru would actually confess to Shizuku?\n\nA cold-hearted girl and super-troublemaker romance with a fresh new perspective.\n\n(Source: MU)\n\nNote: Volume 10 contains the extra Kenji to Haru and Volume 11 contains the extras 1-nensei no Koro no Hanashi and Shoujo-tachi no Benkyoukai.\nVolume 13 has the 4 side story chapters Sasaya-kun no Hanashi 2, Iyo no Ouji-sama Daisakusen! , Riverside no Kodomo-tachi, and Never Ending .', 'https://media.kitsu.io/manga/poster_images/24407/original.jpg', 24407, 0, 1, '2008-08-23', 0),
+(29, 'Snow White with the Red Hair', 'Akagami no Shirayuki-hime', 'Shirayuki was a young girl born with unique apple-red hair. She meets a famous but foolish Prince Raji, who falls in love with her at first sight and orders her to become his concubine. With nowhere else to go, Shirayuki cuts her hair and escapes to a neighboring country. While traversing through the forests, she meets a young boy, Zen, who helps her after she boldly cures his wounds but then gets poisoned by an apple given to Shirayuki. Meanwhile, Prince Raji sends out henchmen to search for her. What will happen to Shirayuki? What is Zen’s true character? A refreshing fantasy story between an optimistic heroine and a prince who constantly stays on her watch.\n\n(Source: Aerandria Scans)\n\nIncluded one-shots:\nVolume 1: Hachigatsu no Shikisai (Four-season Color of August)\nVolume 2: Bokura wo Tsunaide. (Bind Us)', 'https://media.kitsu.io/manga/poster_images/9855/original.jpg', 9855, 0, 1, '2006-08-10', 0),
+(30, 'Wolf Children: Ame & Yuki', 'Ookami Kodomo no Ame to Yuki', 'When Hana falls in love with a young interloper she encounters in her college class, the last thing she expects to learn is that he is part wolf. Instead of rejecting her lover upon learning his secret, she accepts him with open arms. Soon, the couple is expecting their first child, and a cozy picture of family life unfolds. But after what seems like a mere moment of bliss to Hana, the father of her children is tragically taken from her. Life as a single mother is hard in any situation, but when your children walk a fine line between man and beast, the rules of parenting all but go out the window. With no one to turn to, how will Hana survive?\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/20582/original.jpg', 20582, 0, 1, '2012-04-04', 0),
+(31, 'Magi: The Labyrinth of Magic', 'Magi', 'Deep within the desert lie the mysterious Dungeons, vast stores of riches there for the taking by anyone lucky enough to find them and brave enough to venture into the depths from where few have ever returned. Plucky young adventurer Aladdin means to find the Dungeons and their riches, but Aladdin is just as mysterious as the treasures he seeks. Together with his friend, Alibaba, and the genie, Ugo, Aladdin sets out to find his fortune in the depths of the endless dunes...', 'https://media.kitsu.io/manga/poster_images/25108/original.jpg', 25108, 0, 0, '2009-06-03', 0),
+(32, 'The Rising of the Shield Hero: The Manga Companion', 'Tate no Yuusha no Nariagari', 'Naofumi Iwatani, an uncharismatic Otaku who spends his days on games and manga, suddenly finds himself summoned to a parallel universe! He discovers he is one of four heroes equipped with legendary weapons and tasked with saving the world from its prophesied destruction. As the Shield Hero, the weakest of the heroes, all is not as it seems. Naofumi is soon alone, penniless, and betrayed. With no one to turn to, and nowhere to run, he is left with only his shield. Now, Naofumi must rise to become the legendary Shield Hero and save the world!\n\n(Source: One Peace)', 'https://media.kitsu.io/manga/poster_images/25524/original.jpg', 25524, 0, 0, '2014-02-05', 0),
+(33, 'Gantz', 'Gantz', 'Thought your life was bad? Sometimes, death is worse. There is no salvation, peace, nor god waiting to receive you into their care. But wait, a god? Maybe you are talking about that big black ball stuck in the room with you. Now you are thrown into a game, fighting green aliens and robot monsters for the chance to survive.\n\nWhen Kei Kurono is killed, he thus finds himself caught in such a game; a test of his skills, morals and will to survive. His life is not his own, his death spat and trampled upon over and over again. What happens if he does not listen? God knows.\n\nA word of warning: Gantz is not for the faint-hearted, but neither is it as simple as it looks. Gore, rape and violence is rampant, as are portrayals of greed, violence, and all the ugliness that one sees in society today.\n\n(Source: MAL Rewrite)', 'https://media.kitsu.io/manga/poster_images/1282/original.jpeg', 1282, 0, 2, '2000-07-13', 0),
+(34, 'Prison School', 'Prison School', 'Hachimitsu Private Academy was a revered and elite all-girls’ boarding school on the outskirts of Tokyo…once upon a time. But with the new school year comes a revision to school policy: Boys are to be admitted into the student body for the first time ever. But on his first day at Hachimitsu, Kiyoshi Fujino discovers that he’s one of only five boys enrolled at the school. Their numbers overwhelmed by the thousand girls in the student body, is it heaven or hell that awaits these five (un)fortunates?!\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/18452/original.jpg', 18452, 0, 2, '2011-02-07', 0),
+(35, 'Please don\'t bully me, Nagatoro', 'Ijiranaide, Nagatoro-san', 'Nagatoro is a freshman girl in high school who loves bullying her Senpai. But he puts up with it, even after being put through all kinds of embarrassing situations, because he\'s in love with her.\n\n(Source: MU)', 'https://media.kitsu.io/manga/poster_images/40324/original.jpg', 40324, 0, 1, '2017-11-07', 0),
+(36, 'Your name.', 'Kimi no Na wa.', 'Based on the hit animated film! Mitsuha, a high school girl from a town deep in the mountains, dreams of an unfamiliar life in Tokyo. Taki, a high school boy from Tokyo, dreams that he is a girl living in the mountains. As the two change places in their dreams, their encounter sets a miraculous story into motion.\n\n(Source: Yen Press)', 'https://media.kitsu.io/manga/poster_images/38482/original.jpg', 38482, 0, 1, '2016-05-27', 0),
+(37, 'Vagabond', 'Vagabond', 'In 16th century Japan, Shinmen Takezou is a wild, rough young man, in both his appearance and his actions. His aggressive nature has won him the collective reproach and fear of his village, leading him and his best friend, Matahachi Honiden, to run away in search of something grander than provincial life. The pair enlist in the Toyotomi army, yearning for glory—but when the Toyotomi suffer a crushing defeat at the hands of the Tokugawa Clan at the Battle of Sekigahara, the friends barely make it out alive.\n\nAfter the two are separated, Shinmen returns home on a self-appointed mission to notify the Hon\'iden family of Matahachi\'s survival. He instead finds himself a wanted criminal, framed for his friend\'s supposed murder based on his history of violence. Upon being captured, he is strung up on a tree and left to die. An itinerant monk, the distinguished Takuan Soho, takes pity on the \"devil child,\" secretly freeing Shinmen and christening him with a new name to avoid pursuit by the authorities: Musashi Miyamoto.\n\nVagabond is the fictitious retelling of the life of one of Japan\'s most renowned swordsmen, the \"Sword Saint\" Musashi Miyamoto—his rise from a swordsman with no desire other than to become \"Invincible Under the Heavens\" to an enlightened warrior who slowly learns of the importance of close friends, self-reflection, and life itself.\n\n(Source: MAL)', 'https://media.kitsu.io/manga/poster_images/1482/original.png', 1482, 0, 0, '1999-03-23', 0);
 
 -- --------------------------------------------------------
 
@@ -430,6 +461,165 @@ CREATE TABLE `manga_genre` (
   `manga_id` int NOT NULL,
   `genre_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `manga_genre`
+--
+
+INSERT INTO `manga_genre` (`id`, `manga_id`, `genre_id`) VALUES
+(1, 2, 5),
+(2, 2, 8),
+(3, 2, 34),
+(4, 2, 46),
+(7, 3, 1),
+(8, 3, 8),
+(5, 3, 19),
+(6, 3, 31),
+(9, 4, 5),
+(12, 5, 1),
+(11, 5, 5),
+(10, 5, 8),
+(13, 5, 15),
+(14, 6, 8),
+(17, 6, 19),
+(15, 6, 31),
+(16, 6, 83),
+(21, 7, 1),
+(20, 7, 5),
+(18, 7, 8),
+(19, 7, 9),
+(22, 7, 46),
+(23, 7, 74),
+(47, 7, 192),
+(27, 8, 1),
+(26, 8, 3),
+(24, 8, 8),
+(25, 8, 18),
+(30, 8, 19),
+(28, 8, 35),
+(29, 8, 46),
+(34, 9, 2),
+(35, 9, 3),
+(37, 9, 4),
+(36, 9, 8),
+(31, 9, 18),
+(33, 9, 19),
+(32, 9, 35),
+(51, 12, 5),
+(50, 12, 34),
+(49, 12, 126),
+(52, 12, 197),
+(57, 13, 1),
+(61, 13, 2),
+(56, 13, 3),
+(53, 13, 8),
+(54, 13, 9),
+(60, 13, 16),
+(59, 13, 19),
+(55, 13, 31),
+(58, 13, 35),
+(62, 14, 8),
+(63, 14, 9),
+(64, 14, 33),
+(65, 14, 46),
+(69, 15, 1),
+(67, 15, 5),
+(66, 15, 9),
+(70, 15, 19),
+(68, 15, 126),
+(77, 17, 1),
+(76, 17, 3),
+(75, 17, 9),
+(80, 17, 19),
+(79, 17, 26),
+(78, 17, 83),
+(81, 18, 2),
+(83, 18, 3),
+(82, 18, 84),
+(86, 19, 1),
+(85, 19, 5),
+(84, 19, 9),
+(88, 19, 19),
+(87, 19, 26),
+(89, 20, 5),
+(93, 20, 19),
+(91, 20, 26),
+(90, 20, 126),
+(92, 20, 241),
+(97, 22, 1),
+(94, 22, 8),
+(95, 22, 9),
+(98, 22, 19),
+(96, 22, 126),
+(99, 23, 18),
+(100, 23, 35),
+(101, 23, 36),
+(106, 24, 1),
+(105, 24, 3),
+(102, 24, 8),
+(103, 24, 9),
+(108, 24, 19),
+(104, 24, 31),
+(107, 24, 34),
+(113, 25, 1),
+(111, 25, 5),
+(109, 25, 8),
+(110, 25, 9),
+(114, 25, 15),
+(115, 25, 46),
+(112, 25, 126),
+(116, 25, 192),
+(121, 26, 3),
+(122, 26, 5),
+(117, 26, 26),
+(118, 26, 34),
+(120, 26, 74),
+(119, 26, 84),
+(123, 27, 8),
+(124, 27, 9),
+(126, 27, 19),
+(125, 27, 46),
+(127, 28, 5),
+(128, 28, 26),
+(129, 28, 34),
+(131, 29, 1),
+(130, 29, 3),
+(133, 29, 26),
+(132, 29, 83),
+(135, 30, 1),
+(134, 30, 3),
+(138, 30, 4),
+(136, 30, 26),
+(137, 30, 84),
+(141, 31, 1),
+(140, 31, 9),
+(139, 31, 15),
+(143, 32, 1),
+(142, 32, 3),
+(145, 32, 8),
+(144, 32, 9),
+(152, 33, 2),
+(147, 33, 3),
+(154, 33, 4),
+(146, 33, 8),
+(151, 33, 19),
+(149, 33, 35),
+(150, 33, 36),
+(148, 33, 126),
+(153, 33, 310),
+(155, 34, 5),
+(157, 34, 26),
+(158, 34, 34),
+(156, 34, 126),
+(159, 36, 3),
+(162, 36, 19),
+(160, 36, 26),
+(161, 36, 34),
+(165, 37, 3),
+(163, 37, 8),
+(164, 37, 9),
+(166, 37, 83),
+(167, 37, 324);
 
 -- --------------------------------------------------------
 
@@ -563,13 +753,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT de tabela `already_read`
 --
 ALTER TABLE `already_read`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `already_watched`
 --
 ALTER TABLE `already_watched`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `anime`
@@ -587,31 +777,31 @@ ALTER TABLE `anime_genre`
 -- AUTO_INCREMENT de tabela `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
 
 --
 -- AUTO_INCREMENT de tabela `manga`
 --
 ALTER TABLE `manga`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `manga_genre`
 --
 ALTER TABLE `manga_genre`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- AUTO_INCREMENT de tabela `read_later`
 --
 ALTER TABLE `read_later`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `watch_later`
 --
 ALTER TABLE `watch_later`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restrições para despejos de tabelas
